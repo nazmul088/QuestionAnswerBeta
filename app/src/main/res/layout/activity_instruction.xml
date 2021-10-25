@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructionActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Instructions"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:lineSpacingExtra="5sp"
+        android:text="“For each of the questions, we would like you to imagine you have 10 buttons to allocate to different. Ranges shown on the screen based on the probability that you think a specific event will happen. One matchstick represents 10 percent. As you add  matchsticks  , it means that you think the event is more likely to happen. For example, if you put two  matchsticks  in a range, it means you think there is a 20 percent chance of this outcome happening. If you pick 5 matchsticks, it means that you think there is a 50 percent chance of this outcome to happen and if you put all 10  matchsticks  in a range, it means you are certain this will be the outcome.
+
+There is not a right or wrong answer, we just want to know what you think for an AVERAGE Firm.”
+
+I want to go through a practice exercise with you. This will help you understand the structure of the full exercise. I will go through all the steps in detail. I am happy to go through the information as many times as you need, so please ask me questions at any stage
+"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="40dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_button"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
