@@ -1,16 +1,15 @@
 package com.example.questionanswer;
 
-import static com.example.questionanswer.MaintwoActivity.activity;
-import static com.example.questionanswer.MaintwoActivity.des;
-import static com.example.questionanswer.MaintwoActivity.hdes;
-import static com.example.questionanswer.MaintwoActivity.il;
-import static com.example.questionanswer.MaintwoActivity.ldes;
-import static com.example.questionanswer.MaintwoActivity.lsrc;
-import static com.example.questionanswer.MaintwoActivity.root;
-import static com.example.questionanswer.MaintwoActivity.src;
-
+import static com.example.questionanswer.CustomActivity.des;
+import static com.example.questionanswer.CustomActivity.hdes;
+import static com.example.questionanswer.CustomActivity.il;
+import static com.example.questionanswer.CustomActivity.ldes;
+import static com.example.questionanswer.CustomActivity.lsrc;
+import static com.example.questionanswer.CustomActivity.root;
+import static com.example.questionanswer.CustomActivity.src;
 import static java.lang.Math.max;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -21,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -32,16 +32,20 @@ public class ItemList extends RecyclerView.Adapter<ItemHolder> {
     int type=1;
     public ImageView ontop=null,tii=null;
     public TextView counter;
+    public Activity activity;
 
-    ItemList(List<DataItem> list, CardView cview, RecyclerView recyclerView, TextView textView) {
+    ItemList(Activity activity,List<DataItem> list, CardView cview, RecyclerView recyclerView, TextView textView) {
         mlist=list;
         this.cview=cview;
         this.counter=textView;
         this.recyclerView=recyclerView;
         counter.setText(""+list.size());
+        this.activity=activity;
     }
-    ItemList(List<DataItem> list, int type, CardView cview, RecyclerView recyclerView, TextView textView) {
+
+    ItemList(Activity activity,List<DataItem> list, int type, CardView cview, RecyclerView recyclerView, TextView textView) {
         mlist=list;
+        this.activity=activity;
         this.counter=textView;
         this.type=type;
         this.cview=cview;

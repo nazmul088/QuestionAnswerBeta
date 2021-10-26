@@ -20,27 +20,17 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SecondQuestionActivity extends AppCompatActivity {
-
-    public static RecyclerView lsrc,ldes1,ldes2,ldes3,ldes4,ldes5,ldes6,ldes7,ldes8,ldes9,ldes10;
-    public static CardView src,des1,des2,des3,des4,des5,des6,des7,des8,des9,des10;
-    public static RecyclerView ldes[]=new RecyclerView[10];
-    public static CardView des[]=new CardView[10];
-    public static TextView tdes[]=new TextView[11];
-    public static TextView hdes[]=new TextView[11];
-
+public class SecondQuestionActivity extends CustomActivity {
 
     private Button button;
     private TextView textView;
 
-
-    public static ConstraintLayout root;
-    public static ItemList il[]=new ItemList[11];
     public static Activity activity;
     double a=100;
     double b=50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        il=new ItemList[11];
         super.onCreate(savedInstanceState);
         activity=this;
         setContentView(R.layout.activity_second_question);
@@ -58,7 +48,6 @@ public class SecondQuestionActivity extends AppCompatActivity {
         ldes[8]=findViewById(R.id.ldes9);
         ldes[9]=findViewById(R.id.ldes10);
 
-
         des[0]=findViewById(R.id.des1);
         des[1]=findViewById(R.id.des2);
         des[2]=findViewById(R.id.des3);
@@ -69,7 +58,6 @@ public class SecondQuestionActivity extends AppCompatActivity {
         des[7]=findViewById(R.id.des8);
         des[8]=findViewById(R.id.des9);
         des[9]=findViewById(R.id.des10);
-
 
         tdes[0]=findViewById(R.id.tdes1);
         tdes[1]=findViewById(R.id.tdes2);
@@ -151,7 +139,7 @@ public class SecondQuestionActivity extends AppCompatActivity {
             ldes[i].setHasFixedSize(true);
             ldes[i].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
             List<DataItem>list1=new ArrayList<>();
-            il[i+1]=new ItemList(list1,des[i],ldes[i],tdes[i]);
+            il[i+1]=new ItemList(activity,list1,des[i],ldes[i],tdes[i]);
             ldes[i].setAdapter(il[i+1]);
         }
 
@@ -168,7 +156,7 @@ public class SecondQuestionActivity extends AppCompatActivity {
             }
         });
 
-        il[0]=new ItemList(list,0,src,lsrc,tdes[10]);
+        il[0]=new ItemList(activity,list,0,src,lsrc,tdes[10]);
         lsrc.setAdapter(il[0]);
 
     }
