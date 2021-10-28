@@ -39,7 +39,7 @@ public class ItemList extends RecyclerView.Adapter<ItemHolder> {
         this.cview=cview;
         this.counter=textView;
         this.recyclerView=recyclerView;
-        counter.setText(""+list.size());
+        counter.setText(String.valueOf(list.size()));
         this.activity=activity;
     }
 

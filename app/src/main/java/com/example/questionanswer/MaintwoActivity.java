@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -104,6 +106,47 @@ public class MaintwoActivity extends CustomActivity {
 
 
         button = (Button) findViewById(R.id.button1);
+
+        for(int i=0;i<10;i++)
+        {
+            textView = (TextView) tdes[i];
+            textView.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    String str="";
+                    int start = 1;
+                    for(int i=0;i<10;i++)
+                    {
+                        TextView textView1 = (TextView) tdes[i];
+                        System.out.println("Value is "+textView1.getText().toString());
+                        double value = Double.parseDouble(textView1.getText().toString());
+
+                        double temp = value/10;
+                        temp = b*temp*(2-temp);
+
+                        temp = temp+a-b;
+                        str = str + (i+1)+". Based on your allocation, if "+start+"-"+(start+9)+" is the correct answer, you will earn "+temp+" points and you will lose "+(100-temp)+" points\n";
+                        start = start+10;
+                    }
+
+                    textView = (TextView) findViewById(R.id.textView);
+                    textView.setText(str);
+                }
+            });
+        }
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

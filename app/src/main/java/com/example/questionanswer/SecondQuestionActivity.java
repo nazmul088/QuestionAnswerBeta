@@ -100,6 +100,45 @@ public class SecondQuestionActivity extends CustomActivity {
         list.add(new DataItem(10,"#cc00aa"));
 
 
+        button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String str="";
+                int start = 1;
+                for(int i=0;i<10;i++)
+                {
+                    TextView textView1 = (TextView) tdes[i];
+                    System.out.println("Value is "+textView1.getText().toString());
+                    double value = Double.parseDouble(textView1.getText().toString());
+
+                    double temp = value/10;
+                    temp = b*temp*(2-temp);
+
+                    temp = temp+a-b;
+                    str = str + (i+1)+". Based on your allocation, if "+start+"-"+(start+9)+" is the correct answer, you will earn "+temp+" points and you will lose "+(100-temp)+" points\n";
+                    start = start+10;
+                }
+
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(SecondQuestionActivity.this);
+                builder.setMessage(str).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                builder.setCancelable(false);
+                AlertDialog alert = builder.create();
+                //Setting the title manually
+                alert.setTitle("Check");
+                alert.show();
+            }
+        });
+
+
         button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,10 +150,10 @@ public class SecondQuestionActivity extends CustomActivity {
                     double result = calculateResult();
                     double lostValue = 100-result;
                     AlertDialog.Builder builder = new AlertDialog.Builder(SecondQuestionActivity.this);
-                    builder.setMessage("The correct answer to this question is 333 runs."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    builder.setMessage("The correct answer to this question is 35.69%."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            startActivity(new Intent(SecondQuestionActivity.this,ThirdQuestionActivity.class));
+                            startActivity(new Intent(SecondQuestionActivity.this,MaintwoActivity.class));
                         }
                     });
 
@@ -178,7 +217,7 @@ public class SecondQuestionActivity extends CustomActivity {
 
                 //check if it is correct or incorrect box
                 //here need to add to string
-                if(i==2)
+                if(i==3)
                 {
                     //for correct bin
                     double temp = value/10;
