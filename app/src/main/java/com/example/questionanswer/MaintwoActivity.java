@@ -107,6 +107,7 @@ public class MaintwoActivity extends CustomActivity {
 
         button = (Button) findViewById(R.id.button1);
 
+
         for(int i=0;i<10;i++)
         {
             textView = (TextView) tdes[i];
@@ -120,26 +121,24 @@ public class MaintwoActivity extends CustomActivity {
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
 
+
+
+
                 }
 
                 @Override
                 public void afterTextChanged(Editable editable) {
+                    setResultVisible();
+
                     String str="";
                     int start = 1;
                     for(int i=0;i<10;i++)
                     {
-                        TextView textView1 = (TextView) tdes[i];
-                        System.out.println("Value is "+textView1.getText().toString());
-                        double value = Double.parseDouble(textView1.getText().toString());
 
-                        double temp = value/10;
-                        temp = b*temp*(2-temp);
-
-                        temp = temp+a-b;
+                        double temp = calculateResult(i);
                         str = str + (i+1)+". Based on your allocation, if "+start+"-"+(start+9)+" is the correct answer, you will earn "+temp+" points and you will lose "+(100-temp)+" points\n";
                         start = start+10;
                     }
-
                     textView = (TextView) findViewById(R.id.textView);
                     textView.setText(str);
                 }
@@ -154,7 +153,7 @@ public class MaintwoActivity extends CustomActivity {
                 textView = (TextView) findViewById(R.id.tsrc);
                 if(textView.getText().toString().equals("0"))
                 {
-                    double result = calculateResult();
+                    double result = calculateResult(3);
                     double lostValue = 100-result;
                     AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
                     builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -207,7 +206,7 @@ public class MaintwoActivity extends CustomActivity {
 
     }
 
-    private double calculateResult() {
+    private double calculateResult(int rightValuePosition) {
         double totalValue = (a-b);
         int startRange = 1;
         int endRange = 10;
@@ -224,7 +223,7 @@ public class MaintwoActivity extends CustomActivity {
 
                 //check if it is correct or incorrect box
                 //here need to add to string
-                if(i==3)
+                if(i==rightValuePosition)
                 {
                     //for correct bin
                     double temp = value/10;
@@ -244,5 +243,25 @@ public class MaintwoActivity extends CustomActivity {
         }
         System.out.println(totalValue);
         return totalValue;
+    }
+
+
+    public void setResultVisible()
+    {
+        int totalValue = 0;
+        for(int i=0;i<10;i++)
+        {
+            textView = (TextView) tdes[i];
+            totalValue = totalValue + Integer.parseInt(textView.getText().toString());
+            if(totalValue == 10)
+            {
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setVisibility(View.VISIBLE);
+            }
+            else{
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setVisibility(View.INVISIBLE);
+            }
+        }
     }
 }

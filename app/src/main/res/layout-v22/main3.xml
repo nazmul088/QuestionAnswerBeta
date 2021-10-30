@@ -518,6 +518,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Click on icon and drag it to your desired box"
+        android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@id/tsrc"
         app:layout_constraintLeft_toLeftOf="@id/src"
         android:layout_marginTop="0dp"
@@ -535,6 +536,7 @@
         app:layout_constraintTop_toBottomOf="@id/des1"
         android:layout_marginTop="20dp"
         android:textColor="@color/black"
+        android:visibility="invisible"
         android:text="1. Based on your allocation, if 1-10 is the correct answer, you will earn XXX points and you will lose YYY points."
         />
 
