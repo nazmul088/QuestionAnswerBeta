@@ -19,7 +19,7 @@ public class TableDataActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TableDataActivity.this,MaintwoActivity.class));
+                startActivity(new Intent(TableDataActivity.this,PractiseGameStartActivity.class));
             }
         });
     }

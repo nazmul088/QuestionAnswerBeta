@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".PracticeSessionEndActivity"
+            android:exported="false" />
+        <!--
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+        -->
+        <activity
             android:name=".PractiseGameStartActivity"
             android:exported="false" />
         <activity
@@ -35,7 +43,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".MaintwoActivity" />
         <activity
-            android:name=".NameActivity"
+            android:name=".ResultActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -142,8 +142,6 @@ public class MaintwoActivity extends CustomActivity {
 
 
                     }
-                    //textView = (TextView) findViewById(R.id.textView);
-                    //textView.setText(str);
                 }
             });
         }
@@ -158,7 +156,13 @@ public class MaintwoActivity extends CustomActivity {
                 {
                     double result = calculateResult(3);
                     double lostValue = 100-result;
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
+
+                    Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
+                    intent.putExtra("game","practice");
+                    intent.putExtra("earn",String.valueOf(result));
+                    intent.putExtra("lost",String.valueOf(lostValue));
+                    startActivity(intent);
+                    /*AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
                     builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -170,7 +174,7 @@ public class MaintwoActivity extends CustomActivity {
                     AlertDialog alert = builder.create();
                     //Setting the title manually
                     alert.setTitle("Thank you for your answer.");
-                    alert.show();
+                    alert.show();*/
 
                 }
                 else{
