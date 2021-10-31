@@ -10,6 +10,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -120,10 +122,6 @@ public class MaintwoActivity extends CustomActivity {
                 @Override
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-
-
-
-
                 }
 
                 @Override
@@ -132,15 +130,20 @@ public class MaintwoActivity extends CustomActivity {
 
                     String str="";
                     int start = 1;
+                    TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
                     for(int i=0;i<10;i++)
                     {
-
                         double temp = calculateResult(i);
-                        str = str + (i+1)+". Based on your allocation, if "+start+"-"+(start+9)+" is the correct answer, you will earn "+temp+" points and you will lose "+(100-temp)+" points\n";
-                        start = start+10;
+                        TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+                        textView = (TextView) tableRow.getChildAt(1);
+                        textView.setText(String.valueOf(temp));
+                        textView = (TextView) tableRow.getChildAt(2);
+                        textView.setText(String.valueOf(100-temp));
+
+
                     }
-                    textView = (TextView) findViewById(R.id.textView);
-                    textView.setText(str);
+                    //textView = (TextView) findViewById(R.id.textView);
+                    //textView.setText(str);
                 }
             });
         }
@@ -255,12 +258,12 @@ public class MaintwoActivity extends CustomActivity {
             totalValue = totalValue + Integer.parseInt(textView.getText().toString());
             if(totalValue == 10)
             {
-                textView = (TextView) findViewById(R.id.textView);
-                textView.setVisibility(View.VISIBLE);
+                TableLayout tableLayout = findViewById(R.id.table_layout);
+                tableLayout.setVisibility(View.VISIBLE);
             }
             else{
-                textView = (TextView) findViewById(R.id.textView);
-                textView.setVisibility(View.INVISIBLE);
+                TableLayout tableLayout = findViewById(R.id.table_layout);
+                tableLayout.setVisibility(View.INVISIBLE);
             }
         }
     }

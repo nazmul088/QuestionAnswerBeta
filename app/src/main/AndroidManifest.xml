@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".PractiseGameStartActivity"
+            android:exported="false" />
+        <activity
             android:name=".ThirdQuestionActivity"
             android:exported="false" />
         <activity
@@ -24,10 +27,11 @@
         <activity
             android:name=".ConsentActivity"
             android:exported="false" />
-
-    <!--<activity
+        <!--
+<activity
             android:name=".NameActivity"
-            android:exported="false" />-->
+            android:exported="false" />
+        -->
         <activity android:name=".MainActivity" />
         <activity android:name=".MaintwoActivity" />
         <activity

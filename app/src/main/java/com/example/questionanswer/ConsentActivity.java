@@ -8,13 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class ConsentActivity extends AppCompatActivity {
 
     private Button button;
-    private CheckBox checkBox;
+    private CheckBox checkBox,checkBox1;
     private TextView textView;
 
     @Override
@@ -26,16 +27,45 @@ public class ConsentActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView4);
         textView.setText(name);
         button = (Button) findViewById(R.id.button1);
+        checkBox = (CheckBox) findViewById(R.id.checkbox1);
+        checkBox1 = (CheckBox) findViewById(R.id.checkbox2);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(checkBox.isChecked())
+                {
+                    checkBox1.setEnabled(false);
+                }
+                else{
+                    checkBox1.setEnabled(true);
+                }
+            }
+        });
+
+        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(checkBox1.isChecked())
+                {
+                    checkBox.setEnabled(false);
+                }
+                else{
+                    checkBox.setEnabled(true);
+                }
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkBox = (CheckBox) findViewById(R.id.checkbox1);
-                if(checkBox.isChecked())
+
+
+
+                if(checkBox.isChecked() || checkBox1.isChecked())
                 {
                     startActivity(new Intent(ConsentActivity.this,InstructionActivity.class));
                 }
                 else{
-                    Toast.makeText(ConsentActivity.this, "Please check the agreement", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ConsentActivity.this, "Please check any one agreement", Toast.LENGTH_SHORT).show();
                 }
             }
         });
