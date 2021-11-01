@@ -39,6 +39,21 @@ public class SecondMainQuestionActivity extends CustomActivity {
         il=new ItemList[11];
         activity=this;
         setContentView(R.layout.activity_second_main_question);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(SecondMainQuestionActivity.this);
+        builder.setMessage(" While answering, please keep in mind that we are asking for an AVERAGE Leather & Footwear Firm.").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        builder.setCancelable(false);
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("Remainder");
+        alert.show();
+
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         lsrc=findViewById(R.id.lsrc);
         src=findViewById(R.id.src);

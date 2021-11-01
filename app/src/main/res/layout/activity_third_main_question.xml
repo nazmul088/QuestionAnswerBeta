@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Q:how much electricity will a servo motor save for an average Leather/Footwear/RMG  firm?"
+        android:text="Q:How much electricity(KWh) will a servo motor save for an average Leather/Footwear/RMG  firm?"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="24sp"

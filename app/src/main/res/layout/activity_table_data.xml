@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TableDataActivity">
+    tools:context=".TableDataActivity"
+    android:paddingBottom="10dp">
 
 
     <TableLayout
@@ -519,15 +520,37 @@
 
     </TableLayout>
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="You will receive a participation bonus of $50, a bonus, and a penalty depending on your allocation across all 10 boxes. Please keep in mind, that you need to allocate all 10 matches."
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/table_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/image_view"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:background="@drawable/edit_text_name_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+
     <ImageView
+        android:id="@+id/image_view"
         android:layout_width="962dp"
-        android:layout_height="289dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="259dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="0dp"
         android:src="@drawable/niddle_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/table_layout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintVertical_bias="0.986" />
 
     <Button
         android:id="@+id/button1"

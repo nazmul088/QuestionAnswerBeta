@@ -89,7 +89,7 @@ public class ResultActivity extends AppCompatActivity {
                 }
                 else if(game.equalsIgnoreCase("thirdMainQuestion"))
                 {
-                    Intent intent = new Intent(getApplicationContext(),NameActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),GameEndActivity.class);
                     startActivity(intent);
                 }
 

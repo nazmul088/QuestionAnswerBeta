@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Q:How much electricity per day of use a sewing machine with a servo motor will use?"
+        android:text="Q:How much electricity(KWh) per day of use a sewing machine with a servo motor will use?"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="24sp"

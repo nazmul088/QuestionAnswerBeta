@@ -60,9 +60,13 @@ public class ConsentActivity extends AppCompatActivity {
 
 
 
-                if(checkBox.isChecked() || checkBox1.isChecked())
+                if(checkBox.isChecked())
                 {
                     startActivity(new Intent(ConsentActivity.this,InstructionActivity.class));
+                }
+                else if(checkBox1.isChecked())
+                {
+                    startActivity(new Intent(getApplicationContext(),GameEndActivity.class));
                 }
                 else{
                     Toast.makeText(ConsentActivity.this, "Please check any one agreement", Toast.LENGTH_SHORT).show();
