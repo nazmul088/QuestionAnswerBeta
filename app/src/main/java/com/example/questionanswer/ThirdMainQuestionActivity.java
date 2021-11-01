@@ -1,11 +1,5 @@
 package com.example.questionanswer;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,13 +10,22 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SecondQuestionActivity extends CustomActivity {
+public class ThirdMainQuestionActivity extends CustomActivity {
+    private String resultString = "";
 
     private Button button;
     private TextView textView;
@@ -32,10 +35,10 @@ public class SecondQuestionActivity extends CustomActivity {
     double b=50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        il=new ItemList[11];
         super.onCreate(savedInstanceState);
+        il=new ItemList[11];
         activity=this;
-        setContentView(R.layout.activity_second_question);
+        setContentView(R.layout.activity_third_main_question);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         lsrc=findViewById(R.id.lsrc);
         src=findViewById(R.id.src);
@@ -50,6 +53,7 @@ public class SecondQuestionActivity extends CustomActivity {
         ldes[8]=findViewById(R.id.ldes9);
         ldes[9]=findViewById(R.id.ldes10);
 
+
         des[0]=findViewById(R.id.des1);
         des[1]=findViewById(R.id.des2);
         des[2]=findViewById(R.id.des3);
@@ -60,6 +64,7 @@ public class SecondQuestionActivity extends CustomActivity {
         des[7]=findViewById(R.id.des8);
         des[8]=findViewById(R.id.des9);
         des[9]=findViewById(R.id.des10);
+
 
         tdes[0]=findViewById(R.id.tdes1);
         tdes[1]=findViewById(R.id.tdes2);
@@ -89,7 +94,7 @@ public class SecondQuestionActivity extends CustomActivity {
         root=findViewById(R.id.root);
 
 
-        List<DataItem> list=new ArrayList<>();
+        List<DataItem>list=new ArrayList<>();
         list.add(new DataItem(1,"#aa9955"));
         list.add(new DataItem(2,"#99aa55"));
         list.add(new DataItem(3,"#5599aa"));
@@ -100,6 +105,9 @@ public class SecondQuestionActivity extends CustomActivity {
         list.add(new DataItem(8,"#11cc33"));
         list.add(new DataItem(9,"#3311cc"));
         list.add(new DataItem(10,"#cc00aa"));
+
+
+        button = (Button) findViewById(R.id.button1);
 
 
         for(int i=0;i<10;i++)
@@ -114,57 +122,31 @@ public class SecondQuestionActivity extends CustomActivity {
                 @Override
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-
-
-
-
                 }
 
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    setButtonVisible();
+                    setResultVisible();
+
+                    String str="";
+                    int start = 1;
+                    TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
+                    for(int i=0;i<10;i++)
+                    {
+                        double temp = calculateResult(i);
+                        TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+                        textView = (TextView) tableRow.getChildAt(1);
+                        textView.setText(String.valueOf(temp));
+                        textView = (TextView) tableRow.getChildAt(2);
+                        textView.setText(String.valueOf(100-temp));
+
+
+                    }
                 }
             });
         }
 
 
-
-
-        button = (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String str="";
-                int start = 1;
-                for(int i=0;i<10;i++)
-                {
-
-                    double temp = calculateResult(i);
-                    str = str + (i+1)+". Based on your allocation, if "+start+"-"+(start+9)+" is the correct answer, you will earn "+temp+" points and you will lose "+(100-temp)+" points\n";
-                    start = start+10;
-                }
-
-
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(SecondQuestionActivity.this);
-                builder.setMessage(str).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-
-                builder.setCancelable(false);
-                AlertDialog alert = builder.create();
-                //Setting the title manually
-                alert.setTitle("Check");
-                alert.show();
-            }
-        });
-
-
-        button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -176,15 +158,15 @@ public class SecondQuestionActivity extends CustomActivity {
                     double lostValue = 100-result;
 
                     Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
-                    intent.putExtra("game","secondQuestion");
+                    intent.putExtra("game","thirdMainQuestion");
                     intent.putExtra("earn",String.valueOf(result));
-                    intent.putExtra("lost",String.valueOf(lostValue) );
+                    intent.putExtra("lost",String.valueOf(lostValue));
                     startActivity(intent);
-                    /*AlertDialog.Builder builder = new AlertDialog.Builder(SecondQuestionActivity.this);
-                    builder.setMessage("The correct answer to this question is 35.69%."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    /*AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
+                    builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            startActivity(new Intent(SecondQuestionActivity.this,MaintwoActivity.class));
+                            startActivity(new Intent(MaintwoActivity.this,SecondQuestionActivity.class));
                         }
                     });
 
@@ -196,7 +178,7 @@ public class SecondQuestionActivity extends CustomActivity {
 
                 }
                 else{
-                    Toast.makeText(SecondQuestionActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ThirdMainQuestionActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
@@ -231,7 +213,7 @@ public class SecondQuestionActivity extends CustomActivity {
 
     }
 
-    private double calculateResult(int rightPosition) {
+    private double calculateResult(int rightValuePosition) {
         double totalValue = (a-b);
         int startRange = 1;
         int endRange = 10;
@@ -248,7 +230,7 @@ public class SecondQuestionActivity extends CustomActivity {
 
                 //check if it is correct or incorrect box
                 //here need to add to string
-                if(i==rightPosition)
+                if(i==rightValuePosition)
                 {
                     //for correct bin
                     double temp = value/10;
@@ -270,7 +252,8 @@ public class SecondQuestionActivity extends CustomActivity {
         return totalValue;
     }
 
-    public void setButtonVisible()
+
+    public void setResultVisible()
     {
         int totalValue = 0;
         for(int i=0;i<10;i++)
@@ -279,15 +262,12 @@ public class SecondQuestionActivity extends CustomActivity {
             totalValue = totalValue + Integer.parseInt(textView.getText().toString());
             if(totalValue == 10)
             {
-                button = (Button) findViewById(R.id.button2);
-                button.setEnabled(true);
-                button.setBackgroundResource(R.drawable.custom_button_1);
+                TableLayout tableLayout = findViewById(R.id.table_layout);
+                tableLayout.setVisibility(View.VISIBLE);
             }
             else{
-
-                button = (Button) findViewById(R.id.button2);
-                button.setEnabled(false);
-                button.setBackgroundResource(R.drawable.disable_button);
+                TableLayout tableLayout = findViewById(R.id.table_layout);
+                tableLayout.setVisibility(View.INVISIBLE);
             }
         }
     }

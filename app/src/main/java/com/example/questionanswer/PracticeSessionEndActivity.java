@@ -17,7 +17,7 @@ public class PracticeSessionEndActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),SecondQuestionActivity.class));
+                startActivity(new Intent(getApplicationContext(),FirstMainQuestionActivity.class));
             }
         });
     }

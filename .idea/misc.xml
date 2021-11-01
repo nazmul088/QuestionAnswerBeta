@@ -27,17 +27,21 @@
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/QuestionAnswer/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.33203125" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/drawable/custom_button.xml" value="0.287109375" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/drawable/custom_button_1.xml" value="0.287109375" />
+        <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/drawable/disable_button.xml" value="0.57421875" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout-v22/activity_consent.xml" value="0.67" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout-v22/activity_instruction.xml" value="0.28532608695652173" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout-v22/activity_name.xml" value="0.5382281553398058" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout-v22/main3.xml" value="0.7196162046908315" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_consent.xml" value="0.3078125" />
+        <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_first_main_question.xml" value="0.3078125" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_instruction.xml" value="0.28532608695652173" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_practice_session_end.xml" value="0.5382281553398058" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_practise_game_start.xml" value="0.5382281553398058" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_result.xml" value="0.52890625" />
+        <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_second_main_question.xml" value="0.3078125" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_second_question.xml" value="0.33605072463768115" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_table_data.xml" value="0.5" />
+        <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_third_main_question.xml" value="0.5" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/activity_third_question.xml" value="0.35260416666666666" />
         <entry key="..\:/Study/L-4-T-1/Question Answer Project/Code3/QuestionAnswer-main/app/src/main/res/layout/main3.xml" value="0.25" />
       </map>
