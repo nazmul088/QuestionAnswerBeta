@@ -158,7 +158,7 @@ public class MaintwoActivity extends CustomActivity {
                     double lostValue = 100-result;
 
                     Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
-                    intent.putExtra("game","practice");
+                    intent.putExtra("game","secondQuestion");
                     intent.putExtra("earn",String.valueOf(result));
                     intent.putExtra("lost",String.valueOf(lostValue));
                     startActivity(intent);

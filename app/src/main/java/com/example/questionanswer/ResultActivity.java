@@ -44,7 +44,9 @@ public class ResultActivity extends AppCompatActivity {
             textView.setAnimation(animation);
 
             animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-            String str = "The correct answer to this question is 35.69%."+ "Based on your allocation, you earned "+earnValue+ " points and lost "+lostValue+" points";
+            String str = "The correct answer to this question is 37."+ "Based on your allocation, you earned "+earnValue+ " points and lost "+lostValue+" points";
+
+            //String str = "The correct answer to this question is 35.69%."+ "Based on your allocation, you earned "+earnValue+ " points and lost "+lostValue+" points";
             textView = (TextView) findViewById(R.id.textView1);
             textView.setText(str);
             textView.setAnimation(animation);
