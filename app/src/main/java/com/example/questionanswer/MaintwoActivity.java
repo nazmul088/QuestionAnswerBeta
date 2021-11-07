@@ -137,8 +137,6 @@ public class MaintwoActivity extends CustomActivity {
                         TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
                         textView = (TextView) tableRow.getChildAt(1);
                         textView.setText(String.valueOf(temp));
-                        textView = (TextView) tableRow.getChildAt(2);
-                        textView.setText(String.valueOf(100-temp));
 
 
                     }

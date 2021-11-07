@@ -69,7 +69,7 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(game.equalsIgnoreCase("practice"))
                 {
-                    Intent intent = new Intent(getApplicationContext(),SecondQuestionActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),PracticeSessionEndActivity.class);
                     startActivity(intent);
                 }
                 else if(game.equalsIgnoreCase("secondQuestion"))

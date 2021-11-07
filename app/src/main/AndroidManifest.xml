@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".DemoGameActivity"
+            android:exported="false" />
+        <activity
             android:name=".GameEndActivity"
             android:exported="false" />
         <activity
@@ -36,8 +39,7 @@
         <activity
             android:name=".SecondQuestionActivity"
             android:exported="false" />
-
- <activity
+        <activity
             android:name=".TableDataActivity"
             android:exported="false" />
         <activity
