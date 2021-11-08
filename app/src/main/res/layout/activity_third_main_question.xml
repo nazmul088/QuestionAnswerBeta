@@ -32,10 +32,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Q:How much electricity(KWh) will a servo motor save for an average Leather/Footwear/RMG  firm?"
+        android:text="Q3. What is the price of electricity per unit(kWh) for a firm like yours which
+gets an official electricity bill?"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="@color/black"/>
 
 
@@ -233,7 +234,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="0-10%"
+        android:text="0.1-1"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -246,7 +247,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="10-20%"
+        android:text="1.01-2"
         android:textColor="@color/white"
         android:id="@+id/h2"
         android:textSize="20dp"
@@ -261,7 +262,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="20-30%"
+        android:text="2.01-3"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -276,7 +277,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="30-40%"
+        android:text="3.01-4"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -290,7 +291,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="40-50%"
+        android:text="4.01-5"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -304,7 +305,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="50-60%"
+        android:text="5.01-6"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -318,7 +319,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="60-70%"
+        android:text="6.01-7"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -332,7 +333,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="70-80%"
+        android:text="7.01-8"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -346,7 +347,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="80-90%"
+        android:text="8.01-9"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -361,7 +362,7 @@
         android:paddingTop="2dp"
         android:background="@drawable/edit_text_bg_green"
         android:gravity="center"
-        android:text="90-100%"
+        android:text="9.01-10"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -531,11 +532,11 @@
 
     <TableLayout
         android:id="@+id/table_layout"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:background="@android:color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tdes1">
@@ -543,37 +544,30 @@
         <TableRow android:background="@drawable/edit_text_bg_green">
 
             <TextView
-
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
+                android:layout_marginLeft="60dp"
+                android:layout_weight="1.5"
+                android:gravity="left"
                 android:text="Box"
-                android:textStyle="bold"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_marginLeft="60dp"
+                android:gravity="left"
                 android:textStyle="bold"
-                android:text="Earned"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
+                android:text="Earned (out of 100)"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
 
+
+
         </TableRow>
 
         <TableRow>
@@ -582,8 +576,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="0-10%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 0.1-1 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -591,22 +586,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -616,8 +602,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="10-20%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 1.01-2 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -625,22 +612,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -650,8 +628,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="20-30%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 2.01-3 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -659,22 +638,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -684,8 +654,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="30-40%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 3.01-4 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -693,22 +664,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -718,8 +680,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="40-50%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 4.01-5 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -727,22 +690,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -752,8 +706,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="50-60%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 5.01-6 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -761,22 +716,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -786,8 +732,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="60-70%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 6.01-7 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -795,22 +742,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -820,8 +758,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="70-80%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 7.01-8 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -829,22 +768,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -854,8 +784,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="80-90%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 8.01-9 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -863,22 +794,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>
@@ -888,8 +810,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="90-100%"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 9.01-10 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -897,22 +820,13 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center_horizontal"
+                android:layout_weight="3.2"
+                android:gravity="left"
                 android:textStyle="bold"
                 android:text="Earned"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:text="Lost"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
 
         </TableRow>

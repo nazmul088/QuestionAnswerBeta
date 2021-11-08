@@ -33,10 +33,33 @@ public class ResultActivity extends AppCompatActivity {
             textView.setAnimation(animation);
 
             animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-            String str = "The correct answer to this question is 37."+ "Based on your allocation, you earned "+earnValue+ " points and lost "+lostValue+" points";
+            String str = "The correct answer to this question is 35.69%."+ "Based on your allocation, you earned "+earnValue+ " points out of 100";
             textView = (TextView) findViewById(R.id.textView1);
             textView.setText(str);
             textView.setAnimation(animation);
+        }
+        else if(game.equalsIgnoreCase("practiceSecond"))
+        {
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setAnimation(animation);
+
+            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+            String str = "The correct answer to this question is 92.2%."+ "Based on your allocation, you earned "+earnValue+ " points out of 100";
+            textView = (TextView) findViewById(R.id.textView1);
+            textView.setText(str);
+            textView.setAnimation(animation);
+        }
+        else if(game.equalsIgnoreCase("practiceThird"))
+        {
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setAnimation(animation);
+
+            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+            String str = "The correct answer to this question is US$846.1 million."+ "Based on your allocation, you earned "+earnValue+ " points out of 100";
+            textView = (TextView) findViewById(R.id.textView1);
+            textView.setText(str);
+            textView.setAnimation(animation);
+
         }
         else if(game.equalsIgnoreCase("secondQuestion"))
         {
@@ -68,6 +91,16 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(game.equalsIgnoreCase("practice"))
+                {
+                    Intent intent = new Intent(getApplicationContext(),PracticeSecondActivity.class);
+                    startActivity(intent);
+                }
+                if(game.equalsIgnoreCase("practiceSecond"))
+                {
+                    Intent intent = new Intent(getApplicationContext(),PracticeThirdActivity.class);
+                    startActivity(intent);
+                }
+                else if(game.equalsIgnoreCase("practiceThird"))
                 {
                     Intent intent = new Intent(getApplicationContext(),PracticeSessionEndActivity.class);
                     startActivity(intent);

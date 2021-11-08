@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".PracticeThirdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PracticeSecondActivity"
+            android:exported="false" />
+        <activity
             android:name=".DemoGameActivity"
             android:exported="false" />
         <activity

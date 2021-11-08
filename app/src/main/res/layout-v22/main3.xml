@@ -29,13 +29,14 @@
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Q:What do you think is an AVERAGE temperature of a human being in °C?
+        android:text="1.  As of 20 July 2021, the Bangladesh Cricket team has played 388 ODI (One-day International) matches. What is the overall winning percentage of the Bangladesh Cricket team in ODI Matches?
 "       app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="@color/black"/>
 
 
@@ -238,6 +239,7 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/des1"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/des1"
         app:layout_constraintRight_toRightOf="@+id/des1" />
 

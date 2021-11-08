@@ -24,7 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FirstMainQuestionActivity extends CustomActivity {
+public class PracticeThirdActivity extends CustomActivity {
     private String resultString = "";
 
     private Button button;
@@ -38,7 +38,7 @@ public class FirstMainQuestionActivity extends CustomActivity {
         super.onCreate(savedInstanceState);
         il=new ItemList[11];
         activity=this;
-        setContentView(R.layout.activity_first_main_question);
+        setContentView(R.layout.activity_practice_third);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         lsrc=findViewById(R.id.lsrc);
         src=findViewById(R.id.src);
@@ -137,6 +137,8 @@ public class FirstMainQuestionActivity extends CustomActivity {
                         TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
                         textView = (TextView) tableRow.getChildAt(1);
                         textView.setText(String.valueOf(temp));
+
+
                     }
                 }
             });
@@ -150,11 +152,11 @@ public class FirstMainQuestionActivity extends CustomActivity {
                 textView = (TextView) findViewById(R.id.tsrc);
                 if(textView.getText().toString().equals("0"))
                 {
-                    double result = calculateResult(3);
+                    double result = calculateResult(4);
                     double lostValue = 100-result;
 
                     Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
-                    intent.putExtra("game","firstMainQuestion");
+                    intent.putExtra("game","practiceThird");
                     intent.putExtra("earn",String.valueOf(result));
                     intent.putExtra("lost",String.valueOf(lostValue));
                     startActivity(intent);
@@ -174,7 +176,7 @@ public class FirstMainQuestionActivity extends CustomActivity {
 
                 }
                 else{
-                    Toast.makeText(FirstMainQuestionActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PracticeThirdActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
                     return;
                 }
             }

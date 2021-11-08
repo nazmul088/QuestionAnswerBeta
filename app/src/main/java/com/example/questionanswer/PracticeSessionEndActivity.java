@@ -22,7 +22,7 @@ public class PracticeSessionEndActivity extends AppCompatActivity {
                 "for an Leather &amp; Footwear Firm, by replacing the clutch motor " +
                 "on one sewing machine with a servo motor.We will ask you only <b>3 questions</b>. " +
                 "While answering, please keep " +
-                "in mind that we are asking for an AVERAGE Leather &amp; Footwear Firm.";
+                "in mind that we are asking for a Leather/Footwear firm similar to yours.";
         textView.setText(Html.fromHtml(html));
         Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
