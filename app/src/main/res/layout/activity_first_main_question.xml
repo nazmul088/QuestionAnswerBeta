@@ -31,11 +31,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:padding="5dp"
         android:text="Q1. For firm like yours, How much electricity is consumed by a typical
 machine with clutch motor used continuously for 8 hours in a day?"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:textSize="20sp"
         android:textColor="@color/black"/>
 

@@ -19,7 +19,7 @@ public class PracticeSessionEndActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.textView1);
         String html = "You have completed the practice exercise. We will now move to " +
                 "the main exercise which will help us learn what you expect will change " +
-                "for an Leather &amp; Footwear Firm, by replacing the clutch motor " +
+                "for a Leather &amp; Footwear Firm, by replacing the clutch motor " +
                 "on one sewing machine with a servo motor.We will ask you only <b>3 questions</b>. " +
                 "While answering, please keep " +
                 "in mind that we are asking for a Leather/Footwear firm similar to yours.";

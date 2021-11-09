@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="You will receive a participation bonus of $50, a bonus, and a penalty depending on your allocation across all 10 boxes. Please keep in mind, that you need to allocate all 10 matches."
+        android:text="You will get a bonus for participating in the game and you will get an additional bonus based on each matchstick you assign in the correct box, the bonus will get reduced based on how many matchsticks you assign in the incorrect boxes."
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
