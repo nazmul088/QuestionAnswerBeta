@@ -18,7 +18,7 @@ public class DemoGameActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DemoGameActivity.this,TableDataActivity.class));
+                startActivity(new Intent(DemoGameActivity.this,MaintwoActivity.class));
             }
         });
     }

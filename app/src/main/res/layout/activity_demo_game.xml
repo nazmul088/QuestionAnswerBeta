@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="You will get a bonus for participating in the game and you will get an additional bonus based on each matchstick you assign in the correct box, the bonus will get reduced based on how many matchsticks you assign in the incorrect boxes."
+        android:text="@string/instructionsText2"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

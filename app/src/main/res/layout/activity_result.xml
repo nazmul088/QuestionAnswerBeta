@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Thank you for your answer!"
+        android:text="@string/thank_you_for_your_answer"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="18sp"

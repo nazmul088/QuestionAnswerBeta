@@ -152,7 +152,7 @@ public class PracticeThirdActivity extends CustomActivity {
                 textView = (TextView) findViewById(R.id.tsrc);
                 if(textView.getText().toString().equals("0"))
                 {
-                    double result = calculateResult(4);
+                    double result = calculateResult(3);
                     double lostValue = 100-result;
 
                     Intent intent = new Intent(getApplicationContext(),ResultActivity.class);

@@ -32,9 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Q2. For firm like yours, if that same machine with a clutch motor is replaced
-by a servo motor,how much electricity would it consume if used
-continuously for 8 hours a day?"
+        android:text="@string/mainQuestion2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -563,7 +561,7 @@ continuously for 8 hours a day?"
                 android:layout_marginLeft="60dp"
                 android:gravity="left"
                 android:textStyle="bold"
-                android:text="Earned (out of 100)"
+                android:text="Earned"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 

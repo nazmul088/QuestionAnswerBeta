@@ -51,9 +51,9 @@
         <activity
             android:name=".InstructionActivity"
             android:exported="false" />
-        <activity
-            android:name=".ConsentActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".ConsentActivity"-->
+<!--            android:exported="false" />-->
         <!--
 <activity
             android:name=".NameActivity"
@@ -61,7 +61,7 @@
         -->
         <activity android:name=".MaintwoActivity" />
         <activity
-            android:name=".NameActivity"
+            android:name=".ConsentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

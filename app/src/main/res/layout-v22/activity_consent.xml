@@ -19,12 +19,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="Introduction and Consent"
+        android:text="@string/consent_label"
         android:gravity="center"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         android:textColor="@color/black"/>
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textView3"
+            app:layout_constraintBottom_toBottomOf="@id/textView3"
+            android:text="Bangla"
+            android:checked="false"
+            android:background="@drawable/edit_text_name_bg"
+            android:padding="5dp"
+            />
 
 
 
@@ -32,7 +45,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, my name is "
+        android:text="@string/hello_my_name_is"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView3"
         android:layout_marginTop="10dp"
@@ -68,7 +81,7 @@
         android:lineSpacingExtra="5sp"
         android:layout_marginTop="5dp"
         android:textSize="18sp"
-        android:text="I work for Innovations for Poverty Action (IPA), a research organization.  We are currently conducting a study on technology and innovation in firms. The study is conducted jointly with the World Bank and Columbia University.  As you just completed the Survey/ As you completed the survey on 20 October,2021 you are eligible to participate in an exercise. The exercise will help us learn what you expect, for a Leather/Footwear firm similar to yours, will change by replacing the clutch motor on one sewing machine with a servo motor. We will begin with questions about your existing sewing machines and then ask you about different scenarios where a clutch motor is replaced by a servo motor. Please keep in mind that we want to understand what you think will be the impact on the Leather/Footwear firm similar to yours. Participating in this exercise will help you earn a maximum of $100. I will go through all the rules with you thoroughly so that your firm has the best chance of acquiring the amount. The process will take about 15 minutes. If you complete the full exercise, you will have a chance of receiving a cash amount in your firm’s Mobile Money Account."
+        android:text="@string/consent_text"
         />
 
     <CheckBox
@@ -77,12 +90,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView2"
-        app:layout_constraintBottom_toTopOf="@id/button1"
         android:text="I agree to the Terms and Conditions"
         android:background="@drawable/edit_text_name_bg"
         android:layout_marginLeft="10dp"
         android:padding="5dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="40dp"/>
 
 
         <CheckBox
@@ -99,20 +111,18 @@
             android:layout_marginTop="10dp"/>
 
 
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="50dp"
-        android:padding="10dp"
-        android:textColor="@color/white"
-        android:background="@drawable/custom_button"
-        />
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="36dp"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/custom_button"
+            android:padding="10dp"
+            android:text="Submit"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

@@ -33,7 +33,8 @@ public class ResultActivity extends AppCompatActivity {
             textView.setAnimation(animation);
 
             animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-            String str = "The correct answer to this question is 35.69%."+ "Based on your allocation, you earned "+earnValue+ " points out of 100";
+            String str = "The correct answer to this question is 136."+ "Based on your allocation, you earned "+earnValue+ " points";
+            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল 136"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+earnValue+  "পয়েন্ট অর্জন করেছেন।\n";
             textView = (TextView) findViewById(R.id.textView1);
             textView.setText(str);
             textView.setAnimation(animation);
@@ -44,7 +45,8 @@ public class ResultActivity extends AppCompatActivity {
             textView.setAnimation(animation);
 
             animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-            String str = "The correct answer to this question is 92.2%."+ "Based on your allocation, you earned "+earnValue+ " points out of 100";
+            String str = "The correct answer to this question is 92.2%."+ "Based on your allocation, you earned "+earnValue+ " points";
+            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল 92.2%"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+earnValue+  "পয়েন্ট অর্জন করেছেন।\n";
             textView = (TextView) findViewById(R.id.textView1);
             textView.setText(str);
             textView.setAnimation(animation);
@@ -55,7 +57,8 @@ public class ResultActivity extends AppCompatActivity {
             textView.setAnimation(animation);
 
             animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-            String str = "The correct answer to this question is US$846.1 million."+ "Based on your allocation, you earned "+earnValue+ " points out of 100";
+            String str = "The correct answer to this question is 750-1000."+ "Based on your allocation, you earned "+earnValue+ " points.";
+            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল 750-1000"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+earnValue+  "পয়েন্ট অর্জন করেছেন।\n";
             textView = (TextView) findViewById(R.id.textView1);
             textView.setText(str);
             textView.setAnimation(animation);
@@ -78,7 +81,8 @@ public class ResultActivity extends AppCompatActivity {
             textView.setAnimation(animation);
 
             animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-            String str = "We will calculate your earned rewards and send the amount in your firm's Mobile Money Account after the Endline Survey.";
+            String str = "We will calculate your earned bonus and send the amount in your firm’s mobile money account after the Endline Survey.";
+            String banglaStr = "আমরা আপনার অর্জিত বোনাস হিসাব করবো এবং এন্ডলিন সার্ভের পরে আপনার ফার্মের মোবাইল মানি অ্যাকাউন্টে টাকাটি পাঠিয়ে দিবো।\n";
             textView = (TextView) findViewById(R.id.textView1);
             textView.setText(str);
             textView.setAnimation(animation);
