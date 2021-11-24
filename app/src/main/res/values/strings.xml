@@ -38,6 +38,67 @@ I want to go through a practice exercise with you first. This will help you unde
 
 
     <string name="thank_you_for_your_answer">Thank you for your answer!</string>
+    <string name="q_1_o_1">100-110</string>
+    <string name="q_1_o_2">111-120</string>
+    <string name="q_1_o_3">121-130</string>
+    <string name="q_1_o_4">131-140</string>
+    <string name="q_1_o_5">141-150</string>
+    <string name="q_1_o_6">151-160</string>
+    <string name="q_1_o_7">161-170</string>
+    <string name="q_1_o_8">171-180</string>
+    <string name="q_1_o_9">181-190</string>
+    <string name="q_1_o_10">191-200</string>
+    <string name="q_2_o_1">0-10%</string>
+    <string name="q_2_o_2">11-20%</string>
+    <string name="q_2_o_3">21-30%</string>
+    <string name="q_2_o_4">31-40%</string>
+    <string name="q_2_o_5">41-50%</string>
+    <string name="q_2_o_6">51-60%</string>
+    <string name="q_2_o_7">61-70%</string>
+    <string name="q_2_o_8">71-80%</string>
+    <string name="q_2_o_9">81-90%</string>
+    <string name="q_2_o_10">91-100%</string>
+    <string name="q_3_o_1">800-810 Million</string>
+    <string name="q_3_o_2">811-820 Million</string>
+    <string name="q_3_o_3">821-830 Million</string>
+    <string name="q_3_o_4">831-840 Million</string>
+    <string name="q_3_o_5">841-850 Million</string>
+    <string name="q_3_o_6">851-860 Million</string>
+    <string name="q_3_o_7">861-870 Million</string>
+    <string name="q_3_o_8">871-880 Million</string>
+    <string name="q_3_o_9">881-890 Million</string>
+    <string name="q_3_o_10">891-900 Million</string>
+    <string name="q_4_o_1">0-0.5</string>
+    <string name="q_4_o_2">0.5-1</string>
+    <string name="q_4_o_3">1-1.5</string>
+    <string name="q_4_o_4">1.5-2</string>
+    <string name="q_4_o_5">2-2.5</string>
+    <string name="q_4_o_6">2.5-3</string>
+    <string name="q_4_o_7">3-3.5</string>
+    <string name="q_4_o_8">3.5-4</string>
+    <string name="q_4_o_9">4-4.5</string>
+    <string name="q_4_o_10">4.5-5</string>
+    <string name="q_5_o_1">0-0.5</string>
+    <string name="q_5_o_2">0.5-1</string>
+    <string name="q_5_o_3">1-1.5</string>
+    <string name="q_5_o_4">1.5-2</string>
+    <string name="q_5_o_5">2-2.5</string>
+    <string name="q_5_o_6">2.5-3</string>
+    <string name="q_5_o_7">3-3.5</string>
+    <string name="q_5_o_8">3.5-4</string>
+    <string name="q_5_o_9">4-4.5</string>
+    <string name="q_5_o_10">4.5-5</string>
+    <string name="q_6_o_1">0.1-1tk</string>
+    <string name="q_6_o_2">1.01-2tk</string>
+    <string name="q_6_o_3">2.01-3tk</string>
+    <string name="q_6_o_4">3.01-4tk</string>
+    <string name="q_6_o_5">4.01-5tk</string>
+    <string name="q_6_o_6">5.01-6tk</string>
+    <string name="q_6_o_7">6.01-7tk</string>
+    <string name="q_6_o_8">7.01-8tk</string>
+    <string name="q_6_o_9">8.01-9tk</string>
+    <string name="q_6_o_10">9.01-10tk</string>
+    <string name="thank_you_for_your_time_have_a_good_day">Thank you for your time.Have a good Day</string>
 
 
 </resources>

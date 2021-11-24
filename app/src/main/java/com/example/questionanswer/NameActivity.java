@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class NameActivity extends AppCompatActivity {
@@ -31,6 +34,13 @@ public class NameActivity extends AppCompatActivity {
                 if(name.length()>0)
                 {
                     intent.putExtra("name",name);
+                    RadioGroup radioGroup = (RadioGroup) findViewById(R.id.selectedlanguage);
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    RadioButton radioButton = (RadioButton) findViewById(selectedId);
+                    if(radioButton.getText().toString().equals("Bangla"))
+                        intent.putExtra("language",radioButton.getText().toString());
+                    else
+                        intent.putExtra("language",radioButton.getText().toString());
                     startActivity(intent);
                 }
                 else{

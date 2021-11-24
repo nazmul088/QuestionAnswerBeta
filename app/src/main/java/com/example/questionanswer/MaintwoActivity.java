@@ -2,9 +2,11 @@ package com.example.questionanswer;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -33,12 +35,102 @@ public class MaintwoActivity extends CustomActivity {
     public static Activity activity;
     double a=100;
     double b=50;
+
+    private String language;
+    private Context context;
+    private Resources resources;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         il=new ItemList[11];
+
+
+
+
         activity=this;
         setContentView(R.layout.main3);
+
+
+
+        language= getIntent().getStringExtra("language");
+        if(language.equalsIgnoreCase("Bangla"))
+        {
+            context = LocaleHelper.setLocale(MaintwoActivity.this, "bn");
+            resources = context.getResources();
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setText(resources.getString(R.string.practiceQuestion1));
+            textView = (TextView) findViewById(R.id.h1);
+            textView.setText(resources.getString(R.string.q_1_o_1));
+
+            textView = (TextView) findViewById(R.id.h2);
+            textView.setText(resources.getString(R.string.q_1_o_2));
+
+            textView = (TextView) findViewById(R.id.h3);
+            textView.setText(resources.getString(R.string.q_1_o_3));
+
+            textView = (TextView) findViewById(R.id.h4);
+            textView.setText(resources.getString(R.string.q_1_o_4));
+
+            textView = (TextView) findViewById(R.id.h5);
+            textView.setText(resources.getString(R.string.q_1_o_5));
+
+            textView = (TextView) findViewById(R.id.h6);
+            textView.setText(resources.getString(R.string.q_1_o_6));
+
+            textView = (TextView) findViewById(R.id.h7);
+            textView.setText(resources.getString(R.string.q_1_o_7));
+
+            textView = (TextView) findViewById(R.id.h8);
+            textView.setText(resources.getString(R.string.q_1_o_8));
+
+            textView = (TextView) findViewById(R.id.h9);
+            textView.setText(resources.getString(R.string.q_1_o_9));
+
+            textView = (TextView) findViewById(R.id.h10);
+            textView.setText(resources.getString(R.string.q_1_o_10));
+
+        }
+        else{
+            context = LocaleHelper.setLocale(MaintwoActivity.this, "en");
+            resources = context.getResources();
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setText(resources.getString(R.string.practiceQuestion1));
+
+            textView = (TextView) findViewById(R.id.h1);
+            textView.setText(resources.getString(R.string.q_1_o_1));
+
+            textView = (TextView) findViewById(R.id.h2);
+            textView.setText(resources.getString(R.string.q_1_o_2));
+
+            textView = (TextView) findViewById(R.id.h3);
+            textView.setText(resources.getString(R.string.q_1_o_3));
+
+            textView = (TextView) findViewById(R.id.h4);
+            textView.setText(resources.getString(R.string.q_1_o_4));
+
+            textView = (TextView) findViewById(R.id.h5);
+            textView.setText(resources.getString(R.string.q_1_o_5));
+
+            textView = (TextView) findViewById(R.id.h6);
+            textView.setText(resources.getString(R.string.q_1_o_6));
+
+            textView = (TextView) findViewById(R.id.h7);
+            textView.setText(resources.getString(R.string.q_1_o_7));
+
+            textView = (TextView) findViewById(R.id.h8);
+            textView.setText(resources.getString(R.string.q_1_o_8));
+
+            textView = (TextView) findViewById(R.id.h9);
+            textView.setText(resources.getString(R.string.q_1_o_9));
+
+            textView = (TextView) findViewById(R.id.h10);
+            textView.setText(resources.getString(R.string.q_1_o_10));
+
+
+        }
+
+
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         lsrc=findViewById(R.id.lsrc);
         src=findViewById(R.id.src);
@@ -80,6 +172,7 @@ public class MaintwoActivity extends CustomActivity {
 
 
         hdes[0]=findViewById(R.id.textView20);
+
         hdes[1]=findViewById(R.id.h1);
         hdes[2]=findViewById(R.id.h2);
         hdes[3]=findViewById(R.id.h3);
@@ -90,6 +183,7 @@ public class MaintwoActivity extends CustomActivity {
         hdes[8]=findViewById(R.id.h8);
         hdes[9]=findViewById(R.id.h9);
         hdes[10]=findViewById(R.id.h10);
+
 
         root=findViewById(R.id.root);
 
@@ -159,6 +253,7 @@ public class MaintwoActivity extends CustomActivity {
                     intent.putExtra("game","practice");
                     intent.putExtra("earn",String.valueOf(result));
                     intent.putExtra("lost",String.valueOf(lostValue));
+                    intent.putExtra("language",language);
                     startActivity(intent);
                     /*AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
                     builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {

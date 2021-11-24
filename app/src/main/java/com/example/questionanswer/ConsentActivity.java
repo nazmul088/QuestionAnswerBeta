@@ -28,6 +28,7 @@ public class ConsentActivity extends AppCompatActivity {
     private Context context;
     private Resources resources;
 
+    private String language;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,44 +38,52 @@ public class ConsentActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView4);
         textView.setText(name);
 
+        language = getIntent().getStringExtra("language");
+        if(language.equalsIgnoreCase("Bangla"))
+        {
+            System.out.println("In Bangla");
+            context = LocaleHelper.setLocale(ConsentActivity.this, "bn");
+            resources = context.getResources();
+            textView = (TextView) findViewById(R.id.textView3);
+            textView.setText(resources.getString(R.string.consent_label));
+
+            textView = (TextView) findViewById(R.id.textView1);
+            textView.setText(resources.getString(R.string.hello_my_name_is));
+
+            textView = (TextView) findViewById(R.id.textView2);
+            textView.setLineSpacing((float) 0.01,1);
+            textView.setText(resources.getString(R.string.consent_text));
+
+        }
+        else{
+
+            context = LocaleHelper.setLocale(ConsentActivity.this, "en");
+            resources = context.getResources();
+            textView = (TextView) findViewById(R.id.textView3);
+            textView.setText(resources.getString(R.string.consent_label));
+
+            textView = (TextView) findViewById(R.id.textView1);
+            textView.setText(resources.getString(R.string.hello_my_name_is));
+
+            textView = (TextView) findViewById(R.id.textView2);
+            textView.setText(resources.getString(R.string.consent_text));
+
+        }
         //Change Language
 
-        Switch languageSwitch = (Switch) findViewById(R.id.switch1);
 
-        languageSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){//In bangla
-                    languageSwitch.setText("English");
-                    System.out.println("In Bangla");
-                    context = LocaleHelper.setLocale(ConsentActivity.this, "bn");
-                    resources = context.getResources();
-                    textView = (TextView) findViewById(R.id.textView3);
-                    textView.setText(resources.getString(R.string.consent_label));
-
-                    textView = (TextView) findViewById(R.id.textView1);
-                    textView.setText(resources.getString(R.string.hello_my_name_is));
-
-                    textView = (TextView) findViewById(R.id.textView2);
-                    textView.setText(resources.getString(R.string.consent_text));
-
-
-                }else{ //In English
-                    languageSwitch.setText("Bangla");
-                    context = LocaleHelper.setLocale(ConsentActivity.this, "en");
-                    resources = context.getResources();
-                    textView = (TextView) findViewById(R.id.textView3);
-                    textView.setText(resources.getString(R.string.consent_label));
-
-                    textView = (TextView) findViewById(R.id.textView1);
-                    textView.setText(resources.getString(R.string.hello_my_name_is));
-
-                    textView = (TextView) findViewById(R.id.textView2);
-                    textView.setText(resources.getString(R.string.consent_text));
-
-                }
-            }
-        });
+//        languageSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                if(b){//In bangla
+//
+//
+//                }else{ //In English
+//                    languageSwitch.setText("Bangla");
+//
+//                }
+//            }
+//        });
 
 
 
@@ -117,11 +126,15 @@ public class ConsentActivity extends AppCompatActivity {
 
                 if(checkBox.isChecked())
                 {
-                    startActivity(new Intent(ConsentActivity.this,InstructionActivity.class));
+                    Intent intent = new Intent(ConsentActivity.this,InstructionActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
                 }
                 else if(checkBox1.isChecked())
                 {
-                    startActivity(new Intent(getApplicationContext(),GameEndActivity.class));
+                    Intent intent = new Intent(ConsentActivity.this,GameEndActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(ConsentActivity.this, "Please check any one agreement", Toast.LENGTH_SHORT).show();

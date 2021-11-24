@@ -48,6 +48,68 @@
 
 
     <string name="thank_you_for_your_answer">আপনার উত্তরের জন্য আপনাকে ধন্যবাদ।</string>
+    <string name="q_1_o_1">১০০-১১০</string>
+    <string name="q_1_o_2">১১১-১২০</string>
+    <string name="q_1_o_3">১২১-১৩০</string>
+    <string name="q_1_o_4">১৩১-১৪০</string>
+    <string name="q_1_o_5">১৪১-১৫০</string>
+    <string name="q_1_o_6">১৫১-১৬০</string>
+    <string name="q_1_o_7">১৬১-১৭০</string>
+    <string name="q_1_o_8">১৭১-১৮০</string>
+    <string name="q_1_o_9">১৮১-১৯০</string>
+    <string name="q_1_o_10">১৯১-২০০</string>
+    <string name="q_2_o_1">০-১০%</string>
+    <string name="q_2_o_2">১১-২০%</string>
+    <string name="q_2_o_3">২১-৩০%</string>
+    <string name="q_2_o_4">৩১-৪০%</string>
+    <string name="q_2_o_5">৪১-৫০%</string>
+    <string name="q_2_o_6">৫১-৬০%</string>
+    <string name="q_2_o_7">৬১-৭০%</string>
+    <string name="q_2_o_8">৭১-৮০%</string>
+    <string name="q_2_o_9">৮১-৯০%</string>
+    <string name="q_2_o_10">৯১-১০০%</string>
+
+    <string name="q_3_o_1">৮০০-৮১০ মিলিয়ন</string>
+    <string name="q_3_o_2">৮১১-৮২০ মিলিয়ন</string>
+    <string name="q_3_o_3">৮২১-৮৩০ মিলিয়ন</string>
+    <string name="q_3_o_4">৮৩১-৮৪০ মিলিয়ন</string>
+    <string name="q_3_o_5">৮৪১-৮৫০ মিলিয়ন</string>
+    <string name="q_3_o_6">৮৫১-৮৬০ মিলিয়ন</string>
+    <string name="q_3_o_7">৮৬১-৮৭০ মিলিয়ন</string>
+    <string name="q_3_o_8">৮৭১-৮৮০ মিলিয়ন</string>
+    <string name="q_3_o_9">৮৮১-৮৯০ মিলিয়ন</string>
+    <string name="q_3_o_10">৮৯১-৯০০ মিলিয়ন</string>
+    <string name="q_4_o_1">০-০.৫</string>
+    <string name="q_4_o_2">০.৫-১</string>
+    <string name="q_4_o_3">১-১.৫</string>
+    <string name="q_4_o_4">১.৫-২</string>
+    <string name="q_4_o_5">২-২.৫</string>
+    <string name="q_4_o_6">২.৫-৩</string>
+    <string name="q_4_o_7">৩-৩.৫</string>
+    <string name="q_4_o_8">৩.৫-৪</string>
+    <string name="q_4_o_9">৪-৪.৫</string>
+    <string name="q_4_o_10">৪.৫-৫</string>
+    <string name="q_5_o_1">০-০.৫</string>
+    <string name="q_5_o_2">০.৫-১</string>
+    <string name="q_5_o_3">১-১.৫</string>
+    <string name="q_5_o_4">১.৫-২</string>
+    <string name="q_5_o_5">২-২.৫</string>
+    <string name="q_5_o_6">২.৫-৩</string>
+    <string name="q_5_o_7">৩-৩.৫</string>
+    <string name="q_5_o_8">৩.৫-৪</string>
+    <string name="q_5_o_9">৪-৪.৫</string>
+    <string name="q_5_o_10">৪.৫-৫</string>
+    <string name="q_6_o_1">০.১-১\t  টাকা</string>
+    <string name="q_6_o_2">১.০১-২ টাকা</string>
+    <string name="q_6_o_3">২.০১-৩ টাকা</string>
+    <string name="q_6_o_4">৩.০১-৪ টাকা</string>
+    <string name="q_6_o_5">৪.০১-৫ টাকা</string>
+    <string name="q_6_o_6">৫.০১-৬ টাকা</string>
+    <string name="q_6_o_7">৬.০১-৭ টাকা</string>
+    <string name="q_6_o_8">৭.০১-৮ টাকা</string>
+    <string name="q_6_o_9">৮.০১-৯ টাকা</string>
+    <string name="q_6_o_10">৯.০১-১০ টাকা</string>
+    <string name="thank_you_for_your_time_have_a_good_day">সময় দেয়ার জন্য ধন্যবাদ. আপনার দিনটি শুভ হোক</string>
 
 
 </resources>

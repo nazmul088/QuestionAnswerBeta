@@ -11,12 +11,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
         android:layout_marginLeft="200dp"
+        android:layout_marginTop="208dp"
         android:text="Enumerator Name"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/editTextTextEmailAddress2"
@@ -44,12 +44,12 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
         android:layout_marginLeft="200dp"
+        android:layout_marginTop="46dp"
         android:text="Respondent Name"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/editTextTextEmailAddress3"
@@ -76,12 +76,12 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
         android:layout_marginLeft="200dp"
+        android:layout_marginTop="46dp"
         android:text="Respondent ID"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/editTextTextEmailAddress4"
@@ -104,21 +104,63 @@
         app:layout_constraintTop_toTopOf="@id/textView2"
         app:layout_constraintVertical_bias="0.389" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="46dp"
+        android:text="Select Language"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
 
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
 
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="40dp"
-        android:padding="10dp"
-        android:textColor="@color/white"
         android:background="@drawable/custom_button"
-        />
+        android:padding="10dp"
+        android:text="Submit"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/selectedlanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/textView3"
+        app:layout_constraintLeft_toRightOf="@id/textView3"
+        app:layout_constraintTop_toTopOf="@id/textView3"
+        android:orientation="horizontal"
+        >
+
+
+        <RadioButton
+            android:id="@+id/banglaLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bangla"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/englishLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:checked="true"
+            />
+
+
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
