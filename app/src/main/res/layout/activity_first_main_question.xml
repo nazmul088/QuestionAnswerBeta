@@ -29,6 +29,7 @@
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -45,10 +46,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/des2"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h1">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes1"
@@ -63,10 +63,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des1"
         app:layout_constraintRight_toLeftOf="@+id/des3"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h2">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes2"
@@ -80,10 +79,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des2"
         app:layout_constraintRight_toLeftOf="@+id/des4"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h3">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes3"
@@ -97,10 +95,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des3"
         app:layout_constraintRight_toLeftOf="@+id/des5"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h4">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes4"
@@ -114,10 +111,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des4"
         app:layout_constraintRight_toLeftOf="@+id/des6"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h4">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes5"
@@ -131,10 +127,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des5"
         app:layout_constraintRight_toLeftOf="@+id/des7"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h6">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes6"
@@ -148,10 +143,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des6"
         app:layout_constraintRight_toLeftOf="@+id/des8"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h6">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes7"
@@ -165,10 +159,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des7"
         app:layout_constraintRight_toLeftOf="@+id/des9"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h7">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes8"
@@ -182,10 +175,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des8"
         app:layout_constraintRight_toLeftOf="@+id/des10"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h9">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes9"
@@ -199,10 +191,9 @@
         android:layout_width="75dp"
         android:layout_height="65dp"
         android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des9"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h10">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes10"
@@ -238,7 +229,8 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des1"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des1"
         app:layout_constraintRight_toRightOf="@+id/des1" />
 
@@ -251,8 +243,9 @@
         android:textColor="@color/white"
         android:id="@+id/h2"
         android:textSize="20dp"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des2"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des2"
         app:layout_constraintRight_toRightOf="@+id/des2" />
 
@@ -265,8 +258,9 @@
         android:text="1-1.5"
         android:textColor="@color/white"
         android:textSize="20dp"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des3"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des3"
 
         app:layout_constraintRight_toRightOf="@+id/des3" />
@@ -281,7 +275,8 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des4"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des4"
         app:layout_constraintRight_toRightOf="@+id/des4" />
 
@@ -295,7 +290,8 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des5"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des5"
         app:layout_constraintRight_toRightOf="@+id/des5" />
 
@@ -309,7 +305,8 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des6"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des6"
         app:layout_constraintRight_toRightOf="@+id/des6" />
 
@@ -323,7 +320,8 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des7"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des7"
         app:layout_constraintRight_toRightOf="@+id/des7" />
 
@@ -337,7 +335,8 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des8"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des8"
         app:layout_constraintRight_toRightOf="@+id/des8" />
 
@@ -351,7 +350,8 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des9"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des9"
         app:layout_constraintRight_toRightOf="@+id/des9" />
 
@@ -364,8 +364,9 @@
         android:text="4.5-5"
         android:textColor="@color/white"
         android:textSize="20dp"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des10"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des10"
         app:layout_constraintRight_toRightOf="@+id/des10" />
 

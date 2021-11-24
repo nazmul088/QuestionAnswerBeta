@@ -59,9 +59,9 @@
             android:name=".NameActivity"
             android:exported="false" />
         -->
-        <activity android:name=".MaintwoActivity" />
+<!--        <activity android:name=".MaintwoActivity" />-->
         <activity
-            android:name=".ConsentActivity"
+            android:name=".MaintwoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
