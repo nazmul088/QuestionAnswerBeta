@@ -11,58 +11,84 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".PracticeThirdActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".PracticeSecondActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".DemoGameActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".GameEndActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".ThirdMainQuestionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".SecondMainQuestionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".FirstMainQuestionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".PracticeSessionEndActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".ResultActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".PractiseGameStartActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
         <activity
             android:name=".ThirdQuestionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"/>
 <!--        <activity-->
 <!--            android:name=".SecondQuestionActivity"-->
 <!--            android:exported="false" />-->
         <activity
             android:name=".TableDataActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".InstructionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".ConsentActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"/>
         <!--
 <activity
             android:name=".NameActivity"
             android:exported="false" />
         -->
-        <activity android:name=".MaintwoActivity" />
+        <activity android:name=".MaintwoActivity"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".NameActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

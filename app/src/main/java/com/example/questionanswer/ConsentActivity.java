@@ -33,7 +33,6 @@ public class ConsentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consent);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         String name = getIntent().getStringExtra("name");
         textView = (TextView) findViewById(R.id.textView4);
         textView.setText(name);

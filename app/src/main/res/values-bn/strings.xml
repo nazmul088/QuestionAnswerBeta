@@ -99,7 +99,7 @@
     <string name="q_5_o_8">৩.৫-৪</string>
     <string name="q_5_o_9">৪-৪.৫</string>
     <string name="q_5_o_10">৪.৫-৫</string>
-    <string name="q_6_o_1">০.১-১\t  টাকা</string>
+    <string name="q_6_o_1">০.১-১\nটাকা</string>
     <string name="q_6_o_2">১.০১-২ টাকা</string>
     <string name="q_6_o_3">২.০১-৩ টাকা</string>
     <string name="q_6_o_4">৩.০১-৪ টাকা</string>

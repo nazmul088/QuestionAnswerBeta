@@ -132,7 +132,6 @@ public class PracticeSecondActivity extends CustomActivity {
 
         }
 
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         lsrc=findViewById(R.id.lsrc);
         src=findViewById(R.id.src);
         ldes[0]=findViewById(R.id.ldes1);

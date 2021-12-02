@@ -45,7 +45,6 @@ public class InstructionActivity extends AppCompatActivity {
             textView = (TextView) findViewById(R.id.textView2);
             textView.setText(resources.getString(R.string.instructionsText));
         }
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         button = (Button) findViewById(R.id.button1);
         button.setText("Next");
         button.setOnClickListener(new View.OnClickListener() {

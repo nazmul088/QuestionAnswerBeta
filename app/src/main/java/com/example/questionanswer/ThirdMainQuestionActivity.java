@@ -50,7 +50,7 @@ public class ThirdMainQuestionActivity extends CustomActivity {
 
 
         language= getIntent().getStringExtra("language");
-       // language = "Bangla";
+        //language = "English";
         if(language.equalsIgnoreCase("Bangla"))
         {
             context = LocaleHelper.setLocale(ThirdMainQuestionActivity.this, "bn");
@@ -142,7 +142,6 @@ public class ThirdMainQuestionActivity extends CustomActivity {
         alert.setTitle("Remainder");
         alert.show();
 */
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         lsrc=findViewById(R.id.lsrc);
         src=findViewById(R.id.src);
         ldes[0]=findViewById(R.id.ldes1);

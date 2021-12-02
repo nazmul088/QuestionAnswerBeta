@@ -46,8 +46,6 @@ public class PracticeThirdActivity extends CustomActivity {
         il=new ItemList[11];
         activity=this;
         setContentView(R.layout.activity_practice_third);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
 
        // language = "Bangla";
         language= getIntent().getStringExtra("language");

@@ -14,7 +14,6 @@ public class TableDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_data);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         Button button = findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
