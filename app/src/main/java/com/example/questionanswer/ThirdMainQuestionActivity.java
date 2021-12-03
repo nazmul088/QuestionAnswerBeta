@@ -33,8 +33,8 @@ public class ThirdMainQuestionActivity extends CustomActivity {
     private TextView textView;
 
     public static Activity activity;
-    double a=100;
-    double b=50;
+    double a=3000;
+    double b=1500;
 
     private String language;
     private Context context;
