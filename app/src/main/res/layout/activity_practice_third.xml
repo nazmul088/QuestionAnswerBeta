@@ -15,8 +15,7 @@
         app:cardCornerRadius="5dp"
         app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintLeft_toRightOf="@id/table_layout">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lsrc"
@@ -533,7 +532,7 @@
 
     <TableLayout
         android:id="@+id/table_layout"
-        android:layout_width="350dp"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -579,7 +578,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 800-810 is correct"
+                android:text="If 10000-20000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -605,7 +604,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 811-820 is correct"
+                android:text="If 20001-30000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -631,7 +630,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 821-830 is correct"
+                android:text="If 30001-40000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -657,7 +656,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 831-840 is correct"
+                android:text="If 40001-50000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -683,7 +682,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 841-850 is correct"
+                android:text="If 50001-60000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -709,7 +708,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 851-860 is correct"
+                android:text="If 60001-70000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -735,7 +734,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 861-870 is correct"
+                android:text="If 70001-80000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -761,7 +760,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 871-880 is correct"
+                android:text="If 80001-90000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -787,7 +786,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 881-890 is correct"
+                android:text="If 90001-100000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
@@ -813,7 +812,7 @@
                 android:layout_weight="4"
                 android:gravity="left"
                 android:layout_marginLeft="60dp"
-                android:text="If 891-900 is correct"
+                android:text="If 100001-110000 is correct"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="14sp" />

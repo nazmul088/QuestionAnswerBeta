@@ -54,6 +54,7 @@ public class MaintwoActivity extends CustomActivity {
 
 
         language= getIntent().getStringExtra("language");
+        //language = "Bangla";
         if(language.equalsIgnoreCase("Bangla"))
         {
             context = LocaleHelper.setLocale(MaintwoActivity.this, "bn");

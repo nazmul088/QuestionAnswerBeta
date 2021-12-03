@@ -33,8 +33,8 @@ public class PracticeThirdActivity extends CustomActivity {
     private TextView textView;
 
     public static Activity activity;
-    double a=100;
-    double b=50;
+    double a=3000;
+    double b=1500;
 
 
     private String language;
@@ -47,7 +47,7 @@ public class PracticeThirdActivity extends CustomActivity {
         activity=this;
         setContentView(R.layout.activity_practice_third);
 
-       // language = "Bangla";
+       // language = "English";
         language= getIntent().getStringExtra("language");
         if(language.equalsIgnoreCase("Bangla"))
         {
@@ -242,7 +242,7 @@ public class PracticeThirdActivity extends CustomActivity {
                 textView = (TextView) findViewById(R.id.tsrc);
                 if(textView.getText().toString().equals("0"))
                 {
-                    double result = calculateResult(4);
+                    double result = calculateResult(6);
                     double lostValue = 100-result;
 
                     Intent intent = new Intent(getApplicationContext(),ResultActivity.class);

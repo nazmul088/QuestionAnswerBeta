@@ -14,6 +14,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class NameActivity extends AppCompatActivity {
 
 
@@ -22,8 +25,9 @@ public class NameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name);
-
         Button button = findViewById(R.id.button1);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("test");
+        databaseReference.push().setValue("Testing");
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
