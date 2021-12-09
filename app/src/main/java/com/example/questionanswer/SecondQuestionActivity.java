@@ -36,7 +36,6 @@ public class SecondQuestionActivity extends CustomActivity {
         super.onCreate(savedInstanceState);
         activity=this;
         setContentView(R.layout.activity_second_question);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         lsrc=findViewById(R.id.lsrc);
         src=findViewById(R.id.src);
         ldes[0]=findViewById(R.id.ldes1);

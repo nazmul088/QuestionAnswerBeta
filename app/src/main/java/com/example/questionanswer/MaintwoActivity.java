@@ -2,9 +2,11 @@ package com.example.questionanswer;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MaintwoActivity extends CustomActivity {
-    private String resultString = "";
+    public static String resultString = "";
 
     private Button button;
     private TextView textView;
@@ -33,13 +35,105 @@ public class MaintwoActivity extends CustomActivity {
     public static Activity activity;
     double a=100;
     double b=50;
+
+    public static boolean ended=false;
+
+    private String language;
+    private Context context;
+    private Resources resources;
+    public static int value[]={0,0,0,0,0,0,0,0,0,0};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         il=new ItemList[11];
+
+
         activity=this;
         setContentView(R.layout.main3);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+
+
+        language= getIntent().getStringExtra("language");
+        //language = "Bangla";
+        if(language.equalsIgnoreCase("Bangla"))
+        {
+            context = LocaleHelper.setLocale(MaintwoActivity.this, "bn");
+            resources = context.getResources();
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setText(resources.getString(R.string.practiceQuestion1));
+            textView = (TextView) findViewById(R.id.h1);
+            textView.setText(resources.getString(R.string.q_1_o_1));
+
+            textView = (TextView) findViewById(R.id.h2);
+            textView.setText(resources.getString(R.string.q_1_o_2));
+
+            textView = (TextView) findViewById(R.id.h3);
+            textView.setText(resources.getString(R.string.q_1_o_3));
+
+            textView = (TextView) findViewById(R.id.h4);
+            textView.setText(resources.getString(R.string.q_1_o_4));
+
+            textView = (TextView) findViewById(R.id.h5);
+            textView.setText(resources.getString(R.string.q_1_o_5));
+
+            textView = (TextView) findViewById(R.id.h6);
+            textView.setText(resources.getString(R.string.q_1_o_6));
+
+            textView = (TextView) findViewById(R.id.h7);
+            textView.setText(resources.getString(R.string.q_1_o_7));
+
+            textView = (TextView) findViewById(R.id.h8);
+            textView.setText(resources.getString(R.string.q_1_o_8));
+
+            textView = (TextView) findViewById(R.id.h9);
+            textView.setText(resources.getString(R.string.q_1_o_9));
+
+            textView = (TextView) findViewById(R.id.h10);
+            textView.setText(resources.getString(R.string.q_1_o_10));
+
+        }
+        else{
+            context = LocaleHelper.setLocale(MaintwoActivity.this, "en");
+            resources = context.getResources();
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setText(resources.getString(R.string.practiceQuestion1));
+
+            textView = (TextView) findViewById(R.id.h1);
+            textView.setText(resources.getString(R.string.q_1_o_1));
+
+            textView = (TextView) findViewById(R.id.h2);
+            textView.setText(resources.getString(R.string.q_1_o_2));
+
+            textView = (TextView) findViewById(R.id.h3);
+            textView.setText(resources.getString(R.string.q_1_o_3));
+
+            textView = (TextView) findViewById(R.id.h4);
+            textView.setText(resources.getString(R.string.q_1_o_4));
+
+            textView = (TextView) findViewById(R.id.h5);
+            textView.setText(resources.getString(R.string.q_1_o_5));
+
+            textView = (TextView) findViewById(R.id.h6);
+            textView.setText(resources.getString(R.string.q_1_o_6));
+
+            textView = (TextView) findViewById(R.id.h7);
+            textView.setText(resources.getString(R.string.q_1_o_7));
+
+            textView = (TextView) findViewById(R.id.h8);
+            textView.setText(resources.getString(R.string.q_1_o_8));
+
+            textView = (TextView) findViewById(R.id.h9);
+            textView.setText(resources.getString(R.string.q_1_o_9));
+
+            textView = (TextView) findViewById(R.id.h10);
+            textView.setText(resources.getString(R.string.q_1_o_10));
+
+
+        }
+
+
         lsrc=findViewById(R.id.lsrc);
         src=findViewById(R.id.src);
         ldes[0]=findViewById(R.id.ldes1);
@@ -80,6 +174,7 @@ public class MaintwoActivity extends CustomActivity {
 
 
         hdes[0]=findViewById(R.id.textView20);
+
         hdes[1]=findViewById(R.id.h1);
         hdes[2]=findViewById(R.id.h2);
         hdes[3]=findViewById(R.id.h3);
@@ -90,6 +185,7 @@ public class MaintwoActivity extends CustomActivity {
         hdes[8]=findViewById(R.id.h8);
         hdes[9]=findViewById(R.id.h9);
         hdes[10]=findViewById(R.id.h10);
+
 
         root=findViewById(R.id.root);
 
@@ -108,7 +204,98 @@ public class MaintwoActivity extends CustomActivity {
 
 
         button = (Button) findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView = (TextView) findViewById(R.id.tsrc);
+                if(textView.getText().toString().equals("0"))
+                {
 
+                    double result;
+                    double lostValue;
+                    if(!ended) {
+                        for(int i=0;i<10;i++)
+                        {
+                            value[i]=Integer.parseInt(tdes[i].getText().toString());
+                        }
+                        result = calculateResult(3);
+                        lostValue = 100 - result;
+                        ended=true;
+                    }
+                    else
+                    {
+                        result=Double.parseDouble(resultString);
+                        lostValue=100-result;
+                    }
+                    Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
+                    intent.putExtra("game","practice");
+                    resultString=String.valueOf(result);
+                    intent.putExtra("earn",String.valueOf(result));
+                    intent.putExtra("lost",String.valueOf(lostValue));
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                    /*AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
+                    builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            startActivity(new Intent(MaintwoActivity.this,SecondQuestionActivity.class));
+                        }
+                    });
+
+                    builder.setCancelable(false);
+                    AlertDialog alert = builder.create();
+                    //Setting the title manually
+                    alert.setTitle("Thank you for your answer.");
+                    alert.show();*/
+
+                }
+                else{
+                    Toast.makeText(MaintwoActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
+
+        if(ended==true)
+        {
+            List<DataItem>listsrc=new ArrayList<>();
+            List<List<DataItem>>desLists=new ArrayList<>();
+            for(int i=0;i<10;i++)
+            {
+                List<DataItem>dlists=new ArrayList<>();
+                for(int j=0;j<value[i];j++)
+                    dlists.add(new DataItem(j,""));
+                desLists.add(dlists);
+            }
+
+            for(int i=0;i<10;i++)
+            {
+                ldes[i].setHasFixedSize(true);
+                ldes[i].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+                List<DataItem>list1=desLists.get(i);
+                il[i+1]=new ItemList(activity,list1,des[i],ldes[i],tdes[i]);
+                ldes[i].setAdapter(il[i+1]);
+                tdes[i].setText(""+list1.size());
+            }
+
+            TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.VISIBLE);
+            for(int i=0;i<10;i++)
+            {
+                double temp = calculateResult(i);
+                TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+                textView = (TextView) tableRow.getChildAt(1);
+                if(language.equalsIgnoreCase("Bangla"))
+                    textView.setText(MyStaff.numBangla(temp));
+                else
+                    textView.setText(String.valueOf(temp));
+            }
+
+            return;
+        }
+
+        if(language.equalsIgnoreCase("Bangla"))
+            setupTableBangla();
 
         for(int i=0;i<10;i++)
         {
@@ -136,60 +323,23 @@ public class MaintwoActivity extends CustomActivity {
                         double temp = calculateResult(i);
                         TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
                         textView = (TextView) tableRow.getChildAt(1);
-                        textView.setText(String.valueOf(temp));
-                        textView = (TextView) tableRow.getChildAt(2);
-                        textView.setText(String.valueOf(100-temp));
-
-
+                        if(language.equalsIgnoreCase("Bangla"))
+                            textView.setText(MyStaff.numBangla(temp));
+                        else
+                            textView.setText(String.valueOf(temp));
                     }
                 }
             });
         }
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                textView = (TextView) findViewById(R.id.tsrc);
-                if(textView.getText().toString().equals("0"))
-                {
-                    double result = calculateResult(3);
-                    double lostValue = 100-result;
-
-                    Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
-                    intent.putExtra("game","secondQuestion");
-                    intent.putExtra("earn",String.valueOf(result));
-                    intent.putExtra("lost",String.valueOf(lostValue));
-                    startActivity(intent);
-                    /*AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
-                    builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            startActivity(new Intent(MaintwoActivity.this,SecondQuestionActivity.class));
-                        }
-                    });
-
-                    builder.setCancelable(false);
-                    AlertDialog alert = builder.create();
-                    //Setting the title manually
-                    alert.setTitle("Thank you for your answer.");
-                    alert.show();*/
-
-                }
-                else{
-                    Toast.makeText(MaintwoActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-            }
-        });
-
 
 
         for(int i=0;i<10;i++)
         {
             ldes[i].setHasFixedSize(true);
-            ldes[i].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+            LinearLayoutManager lin=new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+            ldes[i].setLayoutManager(lin);
             List<DataItem>list1=new ArrayList<>();
             il[i+1]=new ItemList(activity,list1,des[i],ldes[i],tdes[i]);
             ldes[i].setAdapter(il[i+1]);
@@ -210,8 +360,39 @@ public class MaintwoActivity extends CustomActivity {
 
         il[0]=new ItemList(activity,list,0,src,lsrc,tdes[10]);
         lsrc.setAdapter(il[0]);
-
     }
+
+    private void setupTableBangla() {
+        TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
+        for(int i=0;i<10;i++)
+        {
+            double temp = calculateResult(i);
+            TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+            textView = (TextView) tableRow.getChildAt(0);
+            if(i==0)
+                textView.setText("যদি ১০০-১১০ সঠিক হয়");
+            else if(i==1)
+                textView.setText("যদি ১১১-১২০ সঠিক হয়");
+            else if(i==2)
+                textView.setText("যদি ১২১-১৩০ সঠিক হয়");
+            else if(i==3)
+                textView.setText("যদি ১৩১-১৪০ সঠিক হয়");
+            else if(i==4)
+                textView.setText("যদি ১৪১-১৫০ সঠিক হয়");
+            else if(i==5)
+                textView.setText("যদি ১৫১-১৬০ সঠিক হয়");
+            else if(i==6)
+                textView.setText("যদি ১৬১-১৭০ সঠিক হয়");
+            else if(i==7)
+                textView.setText("যদি ১৭১-১৮০ সঠিক হয়");
+            else if(i==8)
+                textView.setText("যদি ১৮১-১৯০ সঠিক হয়");
+            else if(i==9)
+                textView.setText("যদি ১৯১-২০০ সঠিক হয়");
+        }
+    }
+
+    public static String result="";
 
     private double calculateResult(int rightValuePosition) {
         double totalValue = (a-b);
@@ -252,6 +433,11 @@ public class MaintwoActivity extends CustomActivity {
         return totalValue;
     }
 
+    public static List<String>resp=new ArrayList<>();
+
+    int antirepeat=1;
+
+    int totVal=0;
 
     public void setResultVisible()
     {
@@ -260,15 +446,19 @@ public class MaintwoActivity extends CustomActivity {
         {
             textView = (TextView) tdes[i];
             totalValue = totalValue + Integer.parseInt(textView.getText().toString());
-            if(totalValue == 10)
-            {
-                TableLayout tableLayout = findViewById(R.id.table_layout);
-                tableLayout.setVisibility(View.VISIBLE);
-            }
-            else{
-                TableLayout tableLayout = findViewById(R.id.table_layout);
-                tableLayout.setVisibility(View.INVISIBLE);
-            }
+        }
+        if(totalValue == 10&&totVal!=10)
+        {
+            TableLayout tableLayout = findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.VISIBLE);
+            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
+                resp.add(getRes());
+            totVal=10;
+        }
+        else{
+            totVal=0;
+            TableLayout tableLayout = findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.INVISIBLE);
         }
     }
 }

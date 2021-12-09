@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="Thank you for your time.Have a good Day"
+        android:text="@string/thank_you_for_your_time_have_a_good_day"
         android:background="@drawable/edit_text_name_bg"
         android:textColor="@color/black"
         android:textSize="18sp"/>
