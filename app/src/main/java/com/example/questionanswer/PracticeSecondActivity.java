@@ -27,11 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PracticeSecondActivity extends CustomActivity {
-    private String resultString = "";
+    public static String resultString = "";
 
     private Button button;
     private TextView textView;
 
+    public static boolean ended=false;
     public static Activity activity;
     double a=100;
     double b=50;
@@ -39,20 +40,20 @@ public class PracticeSecondActivity extends CustomActivity {
     private String language;
     private Context context;
     private Resources resources;
+    public static int value[]={0,0,0,0,0,0,0,0,0,0};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         il=new ItemList[11];
         activity=this;
-
-
-
         setContentView(R.layout.activity_practice_second);
 
-
-
         language= getIntent().getStringExtra("language");
+
+        if(language.equalsIgnoreCase("Bangla"))
+            setupTableBangla();
         //language = "Bangla";
         if(language.equalsIgnoreCase("Bangla"))
         {
@@ -129,7 +130,6 @@ public class PracticeSecondActivity extends CustomActivity {
             textView = (TextView) findViewById(R.id.h10);
             textView.setText(resources.getString(R.string.q_2_o_10));
 
-
         }
 
         lsrc=findViewById(R.id.lsrc);
@@ -200,6 +200,98 @@ public class PracticeSecondActivity extends CustomActivity {
 
 
         button = (Button) findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                textView = (TextView) findViewById(R.id.tsrc);
+                if(textView.getText().toString().equals("0"))
+                {
+
+                    double result;
+                    double lostValue;
+                    if(!ended) {
+                        for(int i=0;i<10;i++)
+                        {
+                            value[i]=Integer.parseInt(tdes[i].getText().toString());
+                        }
+                        result = calculateResult(9);
+                        lostValue = 100 - result;
+                        ended=true;
+                    }
+                    else
+                    {
+                        result=Double.parseDouble(resultString);
+                        lostValue=100-result;
+                    }
+
+                    Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
+                    intent.putExtra("game","practiceSecond");
+
+                    resultString=String.valueOf(result);
+                    intent.putExtra("earn",String.valueOf(result));
+                    intent.putExtra("lost",String.valueOf(lostValue));
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                    /*AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
+                    builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            startActivity(new Intent(MaintwoActivity.this,SecondQuestionActivity.class));
+                        }
+                    });
+
+                    builder.setCancelable(false);
+                    AlertDialog alert = builder.create();
+                    //Setting the title manually
+                    alert.setTitle("Thank you for your answer.");
+                    alert.show();*/
+
+                }
+                else{
+                    Toast.makeText(PracticeSecondActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
+
+        if(ended==true)
+        {
+            List<DataItem>listsrc=new ArrayList<>();
+            List<List<DataItem>>desLists=new ArrayList<>();
+            for(int i=0;i<10;i++)
+            {
+                List<DataItem>dlists=new ArrayList<>();
+                for(int j=0;j<value[i];j++)
+                    dlists.add(new DataItem(j,""));
+                desLists.add(dlists);
+            }
+
+            for(int i=0;i<10;i++)
+            {
+                ldes[i].setHasFixedSize(true);
+                ldes[i].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+                List<DataItem>list1=desLists.get(i);
+                il[i+1]=new ItemList(activity,list1,des[i],ldes[i],tdes[i]);
+                ldes[i].setAdapter(il[i+1]);
+                tdes[i].setText(""+list1.size());
+            }
+
+            TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.VISIBLE);
+            for(int i=0;i<10;i++)
+            {
+                double temp = calculateResult(i);
+                TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+                textView = (TextView) tableRow.getChildAt(1);
+                if(language.equalsIgnoreCase("Bangla"))
+                    textView.setText(MyStaff.numBangla(temp));
+                else
+                    textView.setText(String.valueOf(temp));
+            }
+
+            return;
+        }
 
 
         for(int i=0;i<10;i++)
@@ -228,52 +320,16 @@ public class PracticeSecondActivity extends CustomActivity {
                         double temp = calculateResult(i);
                         TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
                         textView = (TextView) tableRow.getChildAt(1);
-                        textView.setText(String.valueOf(temp));
-
-
+                        if(language.equalsIgnoreCase("Bangla"))
+                            textView.setText(MyStaff.numBangla(temp));
+                        else
+                            textView.setText(String.valueOf(temp));
                     }
                 }
             });
         }
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                textView = (TextView) findViewById(R.id.tsrc);
-                if(textView.getText().toString().equals("0"))
-                {
-                    double result = calculateResult(9);
-                    double lostValue = 100-result;
-
-                    Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
-                    intent.putExtra("game","practiceSecond");
-                    intent.putExtra("earn",String.valueOf(result));
-                    intent.putExtra("lost",String.valueOf(lostValue));
-                    intent.putExtra("language",language);
-                    startActivity(intent);
-                    /*AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
-                    builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            startActivity(new Intent(MaintwoActivity.this,SecondQuestionActivity.class));
-                        }
-                    });
-
-                    builder.setCancelable(false);
-                    AlertDialog alert = builder.create();
-                    //Setting the title manually
-                    alert.setTitle("Thank you for your answer.");
-                    alert.show();*/
-
-                }
-                else{
-                    Toast.makeText(PracticeSecondActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-            }
-        });
 
 
 
@@ -343,7 +399,39 @@ public class PracticeSecondActivity extends CustomActivity {
         return totalValue;
     }
 
+    private void setupTableBangla() {
+        TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
+        for(int i=0;i<10;i++)
+        {
+            double temp = calculateResult(i);
+            TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+            textView = (TextView) tableRow.getChildAt(0);
+            if(i==0)
+                textView.setText("যদি ০০-১০% সঠিক হয়");
+            else if(i==1)
+                textView.setText("যদি ১১-২০% সঠিক হয়");
+            else if(i==2)
+                textView.setText("যদি ২১-৩০% সঠিক হয়");
+            else if(i==3)
+                textView.setText("যদি ৩১-৪০% সঠিক হয়");
+            else if(i==4)
+                textView.setText("যদি ৪১-৫০% সঠিক হয়");
+            else if(i==5)
+                textView.setText("যদি ৫১-৬০% সঠিক হয়");
+            else if(i==6)
+                textView.setText("যদি ৬১-৭০% সঠিক হয়");
+            else if(i==7)
+                textView.setText("যদি ৭১-৮০% সঠিক হয়");
+            else if(i==8)
+                textView.setText("যদি ৮১-৯০% সঠিক হয়");
+            else if(i==9)
+                textView.setText("যদি ৯১-১০০% সঠিক হয়");
+        }
+    }
 
+    public static List<String>resp=new ArrayList<>();
+
+    int totVal=0;
     public void setResultVisible()
     {
         int totalValue = 0;
@@ -351,15 +439,19 @@ public class PracticeSecondActivity extends CustomActivity {
         {
             textView = (TextView) tdes[i];
             totalValue = totalValue + Integer.parseInt(textView.getText().toString());
-            if(totalValue == 10)
-            {
-                TableLayout tableLayout = findViewById(R.id.table_layout);
-                tableLayout.setVisibility(View.VISIBLE);
-            }
-            else{
-                TableLayout tableLayout = findViewById(R.id.table_layout);
-                tableLayout.setVisibility(View.INVISIBLE);
-            }
+        }
+        if(totalValue == 10&&totVal!=10)
+        {
+            totVal=10;
+            TableLayout tableLayout = findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.VISIBLE);
+            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
+                resp.add(getRes());
+        }
+        else{
+            totVal=0;
+            TableLayout tableLayout = findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.INVISIBLE);
         }
     }
 }

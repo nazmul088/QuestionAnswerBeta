@@ -7,6 +7,7 @@ import static com.example.questionanswer.CustomActivity.ldes;
 import static com.example.questionanswer.CustomActivity.lsrc;
 import static com.example.questionanswer.CustomActivity.root;
 import static com.example.questionanswer.CustomActivity.src;
+import static java.lang.Math.abs;
 import static java.lang.Math.max;
 
 import android.app.Activity;
@@ -18,9 +19,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -88,6 +91,7 @@ public class ItemList extends RecyclerView.Adapter<ItemHolder> {
     {
         holder.iv.setVisibility(View.VISIBLE);
 
+
         if(this== il[0]) {
             holder.cv.setScaleX(1.3f);
             holder.cv.setScaleY(1.3f);
@@ -107,8 +111,42 @@ public class ItemList extends RecyclerView.Adapter<ItemHolder> {
                     item.iv.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            setDragListener(iv,mlist.get(pos).code,cview.getX()+item.cv.getX()+iv.getX(),cview.getY()+item.cv.getY()+iv.getY(),pos);
-                            //Toast.makeText(activity, src.getX()+item.cv.getX()+iv.getX()+" "+src.getY()+item.v.getY()+iv.getY(), Toast.LENGTH_SHORT).show();
+                            try {
+                                if(activity==MaintwoActivity.activity&&MaintwoActivity.ended)
+                                {
+return;
+                                }
+                                else if(activity==PracticeSecondActivity.activity&&PracticeSecondActivity.ended)
+                                {
+return;
+                                }
+                                else if(activity==PracticeThirdActivity.activity&&PracticeThirdActivity.ended)
+                                {
+return;
+                                }
+                                else if(activity==FirstMainQuestionActivity.activity&&FirstMainQuestionActivity.ended)
+                                {
+return;
+                                }
+                                else if(activity==SecondMainQuestionActivity.activity&&SecondMainQuestionActivity.ended)
+                                {
+return;
+                                }
+                                else if(activity==ThirdMainQuestionActivity.activity&&ThirdMainQuestionActivity.ended)
+                                {
+                                    return;
+                                }
+                                int posi[] = new int[2];
+                                iv.getLocationOnScreen(posi);
+                                //Toast.makeText(activity, posi[0]+" "+posi[1], Toast.LENGTH_SHORT).show();
+                                setDragListener(iv, mlist.get(pos).code, posi[0]-10, cview.getY() + item.cv.getY() + iv.getY(), pos);
+                                //setDragListener(iv,mlist.get(pos).code,cview.getX()+item.cv.getX()+iv.getX()+(10-mlist.size())*abs(5-mlist.size())*5,cview.getY()+item.cv.getY()+iv.getY(),pos);
+                            }
+                            catch (Exception e)
+                            {
+                                Toast.makeText(activity, "e3"+e, Toast.LENGTH_SHORT).show();
+                            }
+                                //Toast.makeText(activity, src.getX()+item.cv.getX()+iv.getX()+" "+src.getY()+item.v.getY()+iv.getY(), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -127,6 +165,9 @@ public class ItemList extends RecyclerView.Adapter<ItemHolder> {
         notifyItemInserted(mlist.size()-1);
         rec.smoothScrollToPosition(mlist.size()-1);
         counter.setText(""+mlist.size());
+
+        LinearLayoutManager v=(LinearLayoutManager) rec.getLayoutManager();
+        v.scrollToPositionWithOffset(0, 10);
     }
 
     private void setDragListener(final ImageView ii,final String cval,final float fx,final float fy,final int pos) {
@@ -146,10 +187,17 @@ public class ItemList extends RecyclerView.Adapter<ItemHolder> {
 
         ImageView ivnew = new ImageView(activity);
         //ivnew.setBackgroundColor(Color.BLACK);
-        ivnew.setBackground(activity.getDrawable(R.drawable.needle_6));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ivnew.setBackground(activity.getDrawable(R.drawable.needle_6));
+        }
+        else
+        {
+            ivnew.setBackground(activity.getResources().getDrawable(R.drawable.needle_6));
+        }
         ///////ivnew.setBackgroundColor(Color.parseColor(cval));
-        final float height=ii.getHeight()+10;
-        ivnew.setLayoutParams(new ViewGroup.LayoutParams(ii.getWidth()+10,10+ii.getHeight()*1));
+        final float height=ii.getHeight()+15;
+        ivnew.setLayoutParams(new ViewGroup.LayoutParams(ii.getWidth()+15,15+ii.getHeight()*1));
         //ivnew.getLayoutParams().height = iv1.getHeight();
         //ivnew.getLayoutParams().width = iv1.getWidth();
         ivnew.setX(fx);
@@ -245,17 +293,17 @@ public class ItemList extends RecyclerView.Adapter<ItemHolder> {
                 }
                 else
                     return false;
-
                 return true;
             }
         });
-
     }
 
     public void removeItem(int posi) {
         try {
             mlist.remove(posi);
             notifyItemRemoved(posi);
+            LinearLayoutManager v=(LinearLayoutManager) recyclerView.getLayoutManager();
+            v.scrollToPositionWithOffset(0, 10);
             notifyItemRangeChanged(posi,mlist.size());
         }catch (Exception e)
         {

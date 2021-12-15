@@ -31,44 +31,43 @@ public class ConsentActivity extends AppCompatActivity {
     private String language;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consent);
-        String name = getIntent().getStringExtra("name");
-        textView = (TextView) findViewById(R.id.textView4);
-        textView.setText(name);
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_consent);
+            String name = getIntent().getStringExtra("name");
+            textView = (TextView) findViewById(R.id.textView4);
+            textView.setText(name);
 
-        language = getIntent().getStringExtra("language");
-        if(language.equalsIgnoreCase("Bangla"))
-        {
-            System.out.println("In Bangla");
-            context = LocaleHelper.setLocale(ConsentActivity.this, "bn");
-            resources = context.getResources();
-            textView = (TextView) findViewById(R.id.textView3);
-            textView.setText(resources.getString(R.string.consent_label));
+            language = getIntent().getStringExtra("language");
+            if (language.equalsIgnoreCase("Bangla")) {
+                System.out.println("In Bangla");
+                context = LocaleHelper.setLocale(ConsentActivity.this, "bn");
+                resources = context.getResources();
+                textView = (TextView) findViewById(R.id.textView3);
+                textView.setText(resources.getString(R.string.consent_label));
 
-            textView = (TextView) findViewById(R.id.textView1);
-            textView.setText(resources.getString(R.string.hello_my_name_is));
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(resources.getString(R.string.hello_my_name_is));
 
-            textView = (TextView) findViewById(R.id.textView2);
-            textView.setLineSpacing((float) 0.01,1);
-            textView.setText(resources.getString(R.string.consent_text));
+                textView = (TextView) findViewById(R.id.textView2);
+                textView.setLineSpacing((float) 0.01, 1);
+                textView.setText(resources.getString(R.string.consent_text));
 
-        }
-        else{
+            } else {
 
-            context = LocaleHelper.setLocale(ConsentActivity.this, "en");
-            resources = context.getResources();
-            textView = (TextView) findViewById(R.id.textView3);
-            textView.setText(resources.getString(R.string.consent_label));
+                context = LocaleHelper.setLocale(ConsentActivity.this, "en");
+                resources = context.getResources();
+                textView = (TextView) findViewById(R.id.textView3);
+                textView.setText(resources.getString(R.string.consent_label));
 
-            textView = (TextView) findViewById(R.id.textView1);
-            textView.setText(resources.getString(R.string.hello_my_name_is));
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(resources.getString(R.string.hello_my_name_is));
 
-            textView = (TextView) findViewById(R.id.textView2);
-            textView.setText(resources.getString(R.string.consent_text));
+                textView = (TextView) findViewById(R.id.textView2);
+                textView.setText(resources.getString(R.string.consent_text));
 
-        }
-        //Change Language
+            }
+            //Change Language
 
 
 //        languageSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -85,62 +84,54 @@ public class ConsentActivity extends AppCompatActivity {
 //        });
 
 
-
-
-
-
-        button = (Button) findViewById(R.id.button1);
-        checkBox = (CheckBox) findViewById(R.id.checkbox1);
-        checkBox1 = (CheckBox) findViewById(R.id.checkbox2);
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(checkBox.isChecked())
-                {
-                    checkBox1.setEnabled(false);
+            button = (Button) findViewById(R.id.button1);
+            checkBox = (CheckBox) findViewById(R.id.checkbox1);
+            checkBox1 = (CheckBox) findViewById(R.id.checkbox2);
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (checkBox.isChecked()) {
+                        checkBox1.setEnabled(false);
+                    } else {
+                        checkBox1.setEnabled(true);
+                    }
                 }
-                else{
-                    checkBox1.setEnabled(true);
-                }
-            }
-        });
+            });
 
-        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(checkBox1.isChecked())
-                {
-                    checkBox.setEnabled(false);
+            checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (checkBox1.isChecked()) {
+                        checkBox.setEnabled(false);
+                    } else {
+                        checkBox.setEnabled(true);
+                    }
                 }
-                else{
-                    checkBox.setEnabled(true);
-                }
-            }
-        });
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            });
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
 
+                    if (checkBox.isChecked()) {
+                        Intent intent = new Intent(ConsentActivity.this, InstructionActivity.class);
+                        intent.putExtra("language", language);
+                        startActivity(intent);
+                    } else if (checkBox1.isChecked()) {
+                        Intent intent = new Intent(ConsentActivity.this, GameEndActivity.class);
+                        intent.putExtra("language", language);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(ConsentActivity.this, "Please check any one agreement", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }catch (Exception e ){
+            Toast.makeText(ConsentActivity.this, "e2"+e, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ConsentActivity.this, "e2"+e, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ConsentActivity.this, "e2"+e, Toast.LENGTH_SHORT).show();
 
-                if(checkBox.isChecked())
-                {
-                    Intent intent = new Intent(ConsentActivity.this,InstructionActivity.class);
-                    intent.putExtra("language",language);
-                    startActivity(intent);
-                }
-                else if(checkBox1.isChecked())
-                {
-                    Intent intent = new Intent(ConsentActivity.this,GameEndActivity.class);
-                    intent.putExtra("language",language);
-                    startActivity(intent);
-                }
-                else{
-                    Toast.makeText(ConsentActivity.this, "Please check any one agreement", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+        }
 
     }
 

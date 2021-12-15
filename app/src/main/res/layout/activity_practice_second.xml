@@ -18,12 +18,25 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/lsrc"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_bg"
-            android:paddingTop="5dp" />
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lsrc"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -49,12 +62,23 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/des2"
         app:layout_constraintTop_toBottomOf="@id/h1">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes1"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ldes1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 
@@ -66,12 +90,24 @@
         app:layout_constraintLeft_toRightOf="@+id/des1"
         app:layout_constraintRight_toLeftOf="@+id/des3"
         app:layout_constraintTop_toBottomOf="@id/h2">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes2"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ldes2"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="match_parent"
+            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -83,12 +119,25 @@
         app:layout_constraintLeft_toRightOf="@+id/des2"
         app:layout_constraintRight_toLeftOf="@+id/des4"
         app:layout_constraintTop_toBottomOf="@id/h3">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes3"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes3"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -99,12 +148,24 @@
         app:layout_constraintLeft_toRightOf="@+id/des3"
         app:layout_constraintRight_toLeftOf="@+id/des5"
         app:layout_constraintTop_toBottomOf="@id/h4">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes4"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ldes4"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="match_parent"
+            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -115,12 +176,23 @@
         app:layout_constraintLeft_toRightOf="@+id/des4"
         app:layout_constraintRight_toLeftOf="@+id/des6"
         app:layout_constraintTop_toBottomOf="@id/h4">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes5"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ldes5"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -131,12 +203,23 @@
         app:layout_constraintLeft_toRightOf="@+id/des5"
         app:layout_constraintRight_toLeftOf="@+id/des7"
         app:layout_constraintTop_toBottomOf="@id/h5">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes6"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ldes6"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="match_parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -147,12 +230,24 @@
         app:layout_constraintLeft_toRightOf="@+id/des6"
         app:layout_constraintRight_toLeftOf="@+id/des8"
         app:layout_constraintTop_toBottomOf="@id/h6">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ldes7"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -164,11 +259,23 @@
         app:layout_constraintRight_toLeftOf="@+id/des9"
         app:layout_constraintTop_toBottomOf="@id/h7">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes8"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/edit_text_bg"
+            android:gravity="center"
+            android:paddingTop="5dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -179,12 +286,23 @@
         app:layout_constraintLeft_toRightOf="@+id/des8"
         app:layout_constraintRight_toLeftOf="@+id/des10"
         app:layout_constraintTop_toBottomOf="@id/h8">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes9"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes9"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -196,12 +314,23 @@
         app:layout_constraintLeft_toRightOf="@+id/des9"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/h10">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes10"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ldes10"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView

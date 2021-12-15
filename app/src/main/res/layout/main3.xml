@@ -11,217 +11,408 @@
         android:id="@+id/src"
         android:layout_width="285dp"
         android:layout_height="65dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/lsrc"
-            android:paddingTop="5dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/lsrc"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.cardview.widget.CardView>
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Q:  What do you think is an AVERAGE temperature of a human being in °C?
-"       app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/practiceQuestion1"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="@color/black"/>
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des1"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/des2"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h1">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes1"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
     </androidx.cardview.widget.CardView>
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des2"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des1"
         app:layout_constraintRight_toLeftOf="@+id/des3"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h2">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes2"
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes2"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des3"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
+
         app:layout_constraintLeft_toRightOf="@+id/des2"
         app:layout_constraintRight_toLeftOf="@+id/des4"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h3">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes3"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes3"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des4"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
+
         app:layout_constraintLeft_toRightOf="@+id/des3"
         app:layout_constraintRight_toLeftOf="@+id/des5"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h4">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes4"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes4"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des5"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
+
         app:layout_constraintLeft_toRightOf="@+id/des4"
         app:layout_constraintRight_toLeftOf="@+id/des6"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h5">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes5"
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes5"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des6"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
+
         app:layout_constraintLeft_toRightOf="@+id/des5"
         app:layout_constraintRight_toLeftOf="@+id/des7"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h6">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes6"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes6"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des7"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
+
         app:layout_constraintLeft_toRightOf="@+id/des6"
         app:layout_constraintRight_toLeftOf="@+id/des8"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h7">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes7"
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes7"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des8"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
         app:layout_constraintLeft_toRightOf="@+id/des7"
         app:layout_constraintRight_toLeftOf="@+id/des9"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h8">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes8"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes8"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des9"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="2dp"
-        android:layout_marginTop="100dp"
+
         app:layout_constraintLeft_toRightOf="@+id/des8"
         app:layout_constraintRight_toLeftOf="@+id/des10"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h9">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes9"
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes9"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/des10"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="100dp"
+
         app:layout_constraintLeft_toRightOf="@+id/des9"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/h10">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ldes10"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_bg" />
+            android:background="@drawable/edit_text_bg"
+            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ldes10"
+                android:layout_width="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                layout_gravity="center"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="285dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
         android:background="@drawable/edit_text_bg_green_1"
+        android:gravity="center"
         android:text="Drag from here"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        android:gravity="center"
 
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/src"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/src"
         app:layout_constraintRight_toRightOf="@+id/src" />
 
@@ -230,12 +421,14 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="1-10"
+        android:gravity="left"
+        android:text="@string/q_1_o_1"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des1"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/des1"
         app:layout_constraintRight_toRightOf="@+id/des1" />
 
@@ -243,13 +436,14 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="11-20"
+        android:gravity="left"
+        android:text="@string/q_1_o_2"
         android:textColor="@color/white"
         android:id="@+id/h2"
-        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des2"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des2"
         app:layout_constraintRight_toRightOf="@+id/des2" />
 
@@ -258,12 +452,13 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="21-30"
+        android:gravity="left"
+        android:text="@string/q_1_o_3"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des3"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des3"
 
         app:layout_constraintRight_toRightOf="@+id/des3" />
@@ -273,12 +468,13 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="31-40"
+        android:gravity="left"
+        android:text="@string/q_1_o_4"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des4"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des4"
         app:layout_constraintRight_toRightOf="@+id/des4" />
 
@@ -287,12 +483,13 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="41-50"
+        android:gravity="left"
+        android:text="@string/q_1_o_5"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des5"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des5"
         app:layout_constraintRight_toRightOf="@+id/des5" />
 
@@ -301,12 +498,14 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="51-60"
+        android:gravity="left"
+        android:text="@string/q_1_o_6"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des6"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:layout_marginTop="20dp"
+
         app:layout_constraintLeft_toLeftOf="@+id/des6"
         app:layout_constraintRight_toRightOf="@+id/des6" />
 
@@ -315,40 +514,43 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="61-70"
+        android:gravity="left"
+        android:text="@string/q_1_o_7"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des7"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des7"
         app:layout_constraintRight_toRightOf="@+id/des7" />
 
     <TextView
         android:id="@+id/h8"
-        android:layout_width="75dp"
+        android:layout_width="76dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="71-80"
+        android:gravity="left"
+        android:text="@string/q_1_o_8"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des8"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des8"
         app:layout_constraintRight_toRightOf="@+id/des8" />
 
     <TextView
         android:id="@+id/h9"
-        android:layout_width="75dp"
+        android:layout_width="76dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="81-90"
+        android:gravity="left"
+        android:text="@string/q_1_o_9"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des9"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des9"
         app:layout_constraintRight_toRightOf="@+id/des9" />
 
@@ -357,12 +559,13 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_bg_green"
-        android:gravity="center"
-        android:text="91-100"
+        android:gravity="left"
+        android:text="@string/q_1_o_10"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/des10"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="@+id/des10"
         app:layout_constraintRight_toRightOf="@+id/des10" />
 
@@ -371,7 +574,7 @@
         android:id="@+id/tsrc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="0"
         android:textColor="@color/black"
         android:textSize="22dp"
         app:layout_constraintLeft_toLeftOf="@+id/src"
@@ -514,16 +717,323 @@
         android:background="@drawable/custom_button"
         />
 
+
+    <!--Add Table-->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
         android:text="Click on icon and drag it to your desired box"
-        app:layout_constraintTop_toBottomOf="@id/tsrc"
+        android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="@id/src"
-        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tsrc" />
 
-        tools:layout_editor_absoluteX="342dp"
-        tools:layout_editor_absoluteY="501dp" />
+    <TableLayout
+        android:id="@+id/table_layout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="visible"
+        android:background="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tdes1">
+
+        <TableRow android:background="@drawable/edit_text_bg_green">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_weight="1.5"
+                android:gravity="left"
+                android:text="Box"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginLeft="60dp"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 100-110 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 111-120 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 121-130 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 131-140 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 141-150 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 151-160 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 161-170 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 171-180 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 181-190 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="left"
+                android:layout_marginLeft="60dp"
+                android:text="If 191-200 is correct"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.2"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:text="Earned"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+
+        </TableRow>
+
+
+
+    </TableLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
