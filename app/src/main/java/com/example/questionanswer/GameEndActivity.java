@@ -11,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GameEndActivity extends AppCompatActivity {
     private TextView textView;
@@ -53,5 +54,16 @@ public class GameEndActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),NameActivity.class));
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        MaintwoActivity.ended = false;
+        PracticeSecondActivity.ended = false;
+        PracticeThirdActivity.ended = false;
+        FirstMainQuestionActivity.ended = false;
+        SecondMainQuestionActivity.ended = false;
+        ThirdMainQuestionActivity.ended = false;
+        Toast.makeText(GameEndActivity.this,"Cannot Go back on this stage",Toast.LENGTH_LONG).show();
     }
 }

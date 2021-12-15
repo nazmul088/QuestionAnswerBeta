@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FirstMainQuestionActivity extends CustomActivity {
-    private String resultString = "";
+    public static String resultString = "";
 
     private Button button;
     private TextView textView;
@@ -36,10 +36,45 @@ public class FirstMainQuestionActivity extends CustomActivity {
     double a=3000;
     double b=1500;
 
+    public static boolean ended=false;
 
     private String language;
     private Context context;
     private Resources resources;
+
+
+    private void setupTableBangla() {
+        TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
+        for(int i=0;i<10;i++)
+        {
+            double temp = calculateResult(i);
+            TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+            textView = (TextView) tableRow.getChildAt(0);
+            if(i==0)
+                textView.setText("যদি ০-০.৫ সঠিক হয়");
+            else if(i==1)
+                textView.setText("যদি ০.৫-১ সঠিক হয়");
+            if(i==2)
+                textView.setText("যদি ১-১.৫ সঠিক হয়");
+            else if(i==3)
+                textView.setText("যদি ১.৫-২ সঠিক হয়");
+            else if(i==4)
+                textView.setText("যদি ২-২.৫ সঠিক হয়");
+            else if(i==5)
+                textView.setText("যদি ২.৫-৩ সঠিক হয়");
+            else if(i==6)
+                textView.setText("যদি ৩-৩.৫ সঠিক হয়");
+            else if(i==7)
+                textView.setText("যদি ৩.৫-৪ সঠিক হয়");
+            else if(i==8)
+                textView.setText("যদি ৪-৪.৫ সঠিক হয়");
+            else if(i==9)
+                textView.setText("যদি ৪.৫-৫ সঠিক হয়");
+        }
+    }
+
+
+    public static int value[]={0,0,0,0,0,0,0,0,0,0};
 
 
     @Override
@@ -49,8 +84,10 @@ public class FirstMainQuestionActivity extends CustomActivity {
         activity=this;
         setContentView(R.layout.activity_first_main_question);
 
-
         language= getIntent().getStringExtra("language");
+        if(language.equalsIgnoreCase("Bangla"))
+            setupTableBangla();
+
         //language = "Bangla";
         if(language.equalsIgnoreCase("Bangla"))
         {
@@ -199,40 +236,6 @@ public class FirstMainQuestionActivity extends CustomActivity {
 
         button = (Button) findViewById(R.id.button1);
 
-
-        for(int i=0;i<10;i++)
-        {
-            textView = (TextView) tdes[i];
-            textView.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable editable) {
-                    setResultVisible();
-
-                    String str="";
-                    int start = 1;
-                    TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
-                    for(int i=0;i<10;i++)
-                    {
-                        double temp = calculateResult(i);
-                        TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
-                        textView = (TextView) tableRow.getChildAt(1);
-                        textView.setText(String.valueOf(temp));
-                    }
-                }
-            });
-        }
-
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -240,11 +243,26 @@ public class FirstMainQuestionActivity extends CustomActivity {
                 textView = (TextView) findViewById(R.id.tsrc);
                 if(textView.getText().toString().equals("0"))
                 {
-                    double result = calculateResult(3);
-                    double lostValue = 100-result;
+                    double result;
+                    double lostValue;
+                    if(!ended) {
+                        for(int i=0;i<10;i++)
+                        {
+                            value[i]=Integer.parseInt(tdes[i].getText().toString());
+                        }
+                        result = calculateResult(3);
+                        lostValue = 100 - result;
+                        ended=true;
+                    }
+                    else
+                    {
+                        result=Double.parseDouble(resultString);
+                        lostValue=100-result;
+                    }
 
                     Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
                     intent.putExtra("game","firstMainQuestion");
+                    resultString=String.valueOf(result);
                     intent.putExtra("earn",String.valueOf(result));
                     intent.putExtra("lost",String.valueOf(lostValue));
                     intent.putExtra("language",language);
@@ -272,6 +290,79 @@ public class FirstMainQuestionActivity extends CustomActivity {
         });
 
 
+        if(ended==true)
+        {
+            List<DataItem>listsrc=new ArrayList<>();
+            List<List<DataItem>>desLists=new ArrayList<>();
+            for(int i=0;i<10;i++)
+            {
+                List<DataItem>dlists=new ArrayList<>();
+                for(int j=0;j<value[i];j++)
+                    dlists.add(new DataItem(j,""));
+                desLists.add(dlists);
+            }
+
+            for(int i=0;i<10;i++)
+            {
+                ldes[i].setHasFixedSize(true);
+                ldes[i].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+                List<DataItem>list1=desLists.get(i);
+                il[i+1]=new ItemList(activity,list1,des[i],ldes[i],tdes[i]);
+                ldes[i].setAdapter(il[i+1]);
+                tdes[i].setText(""+list1.size());
+            }
+
+            TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.VISIBLE);
+            for(int i=0;i<10;i++)
+            {
+                double temp = calculateResult(i);
+                TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+                textView = (TextView) tableRow.getChildAt(1);
+                if(language.equalsIgnoreCase("Bangla"))
+                    textView.setText(MyStaff.numBangla(temp));
+                else
+                    textView.setText(String.valueOf(temp));
+            }
+
+            return;
+        }
+
+
+        for(int i=0;i<10;i++)
+        {
+            textView = (TextView) tdes[i];
+            textView.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    setResultVisible();
+
+                    String str="";
+                    int start = 1;
+                    TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
+                    for(int i=0;i<10;i++)
+                    {
+                        double temp = calculateResult(i);
+                        TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
+                        textView = (TextView) tableRow.getChildAt(1);
+                        if(language.equalsIgnoreCase("Bangla"))
+                            textView.setText(MyStaff.numBangla(temp));
+                        else
+                            textView.setText(String.valueOf(temp));
+                    }
+                }
+            });
+        }
 
         for(int i=0;i<10;i++)
         {
@@ -339,7 +430,9 @@ public class FirstMainQuestionActivity extends CustomActivity {
         return totalValue;
     }
 
+    public static List<String>resp=new ArrayList<>();
 
+    int totVal=0;
     public void setResultVisible()
     {
         int totalValue = 0;
@@ -347,15 +440,21 @@ public class FirstMainQuestionActivity extends CustomActivity {
         {
             textView = (TextView) tdes[i];
             totalValue = totalValue + Integer.parseInt(textView.getText().toString());
-            if(totalValue == 10)
-            {
-                TableLayout tableLayout = findViewById(R.id.table_layout);
-                tableLayout.setVisibility(View.VISIBLE);
-            }
-            else{
-                TableLayout tableLayout = findViewById(R.id.table_layout);
-                tableLayout.setVisibility(View.INVISIBLE);
-            }
+
+        }
+        if(totalValue == 10&&totVal!=10)
+        {
+            totVal=10;
+            TableLayout tableLayout = findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.VISIBLE);
+
+            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
+                resp.add(getRes());
+        }
+        else{
+            totVal=0;
+            TableLayout tableLayout = findViewById(R.id.table_layout);
+            tableLayout.setVisibility(View.INVISIBLE);
         }
     }
 }
