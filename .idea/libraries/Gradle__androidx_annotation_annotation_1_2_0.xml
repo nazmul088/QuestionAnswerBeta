@@ -2,12 +2,20 @@
   <library name="Gradle: androidx.annotation:annotation:1.2.0">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.2.0/57136ff68ee784c6e19db34ed4a175338fadfde1/annotation-1.2.0.jar!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.annotation/annotation/1.2.0/57136ff68ee784c6e19db34ed4a175338fadfde1/annotation-1.2.0.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.annotation/annotation/1.2.0/57136ff68ee784c6e19db34ed4a175338fadfde1/annotation-1.2.0.jar!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.2.0/8945212022e5276658ab7864714ced3553ea724a/annotation-1.2.0-sources.jar!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.annotation/annotation/1.2.0/8945212022e5276658ab7864714ced3553ea724a/annotation-1.2.0-sources.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.annotation/annotation/1.2.0/8945212022e5276658ab7864714ced3553ea724a/annotation-1.2.0-sources.jar!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </SOURCES>
   </library>
 </component>

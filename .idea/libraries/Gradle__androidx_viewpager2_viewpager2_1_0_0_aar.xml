@@ -2,20 +2,34 @@
   <library name="Gradle: androidx.viewpager2:viewpager2:1.0.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/annotations.zip!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/annotations.zip!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/annotations.zip!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/res" />
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/res" />
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml" />
+=======
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/f9b79f51315d04aad8dae835693a8916/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </SOURCES>
   </library>
 </component>

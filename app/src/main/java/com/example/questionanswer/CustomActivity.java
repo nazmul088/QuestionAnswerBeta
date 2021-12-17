@@ -22,6 +22,7 @@ public class CustomActivity extends AppCompatActivity {
     public static RecyclerView lsrc;
     public static CardView src;
 
+<<<<<<< HEAD
     public HashMap<String,String> res=new HashMap<>();
 
     public HashMap<String,String> getRes()
@@ -35,6 +36,11 @@ public class CustomActivity extends AppCompatActivity {
     }
 
     public String getResOld()
+=======
+    public List<String> res=new ArrayList<>();
+
+    public String getRes()
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     {
         String s="";
         for(int i=1;i<11;i++) {

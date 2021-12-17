@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +32,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.jar.Attributes;
+=======
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
 
 public class ResultActivity extends AppCompatActivity {
     private TextView textView;
@@ -140,9 +150,15 @@ public class ResultActivity extends AppCompatActivity {
             textView.setAnimation(animation);
 
             animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+<<<<<<< HEAD
             String str = "The correct answer to this question is $70191 million."+ "Based on your allocation, you earned "+(Double.parseDouble(earnValue))+ " taka.";
             String banglaStr="এই প্রশ্নের সঠিক উত্তর হল " +
                     "৭১৯১ হাজার কোটি টাকা"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+MyStaff.numBangla(Double.parseDouble(earnValue))+  "টাকা অর্জন করেছেন।\n";
+=======
+            String str = "The correct answer to this question is $846.1 million."+ "Based on your allocation, you earned "+(Double.parseDouble(earnValue))+ " taka.";
+            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল " +
+                    "৮৪৬.১ কোটি টাকা"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+MyStaff.numBangla(Double.parseDouble(earnValue))+  "টাকা অর্জন করেছেন।\n";
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
             if(language.equalsIgnoreCase("Bangla"))
             {
                 context = LocaleHelper.setLocale(ResultActivity.this, "bn");
@@ -265,13 +281,18 @@ public class ResultActivity extends AppCompatActivity {
                 }
                 else if(game.equalsIgnoreCase("thirdMainQuestion"))
                 {
+<<<<<<< HEAD
 
+=======
+                    //////////////////
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
                     uploadToServer();
 
                     Intent intent = new Intent(getApplicationContext(),GameEndActivity.class);
                     intent.putExtra("language",language);
                     startActivity(intent);
                 }
+<<<<<<< HEAD
             }
         });
 
@@ -363,6 +384,8 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+=======
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
             }
         });
 
@@ -395,8 +418,12 @@ public class ResultActivity extends AppCompatActivity {
  */
     }
 
+<<<<<<< HEAD
 
     /*private void uploadToServer2() {
+=======
+    private void uploadToServer() {
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
         //Toast.makeText(ResultActivity.this, "toadting", Toast.LENGTH_SHORT).show();
         List itemList=new ArrayList();
         HashMap<String,List> hashMap=new HashMap<>();
@@ -421,6 +448,10 @@ public class ResultActivity extends AppCompatActivity {
 
 // Now set value with new nameList
         ref.setValue(hashMap);
+<<<<<<< HEAD
     }*/
 
+=======
+    }
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
 }

@@ -2,21 +2,35 @@
   <library name="Gradle: androidx.activity:activity:1.2.4@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/annotations.zip!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/annotations.zip!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/annotations.zip!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0173ed9dc551c8b1c170efbf05532376/transformed/jetified-activity-1.2.4/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/jars/classes.jar!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/res" />
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/AndroidManifest.xml" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/res" />
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/81e00585934a857603eb6cbafe5aec32/transformed/jetified-activity-1.2.4/AndroidManifest.xml" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.activity/activity/1.2.4/2572345ff3e71e4e97140b01423cb80765b5b3e5/activity-1.2.4-sources.jar!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.activity/activity/1.2.4/2572345ff3e71e4e97140b01423cb80765b5b3e5/activity-1.2.4-sources.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.activity/activity/1.2.4/2572345ff3e71e4e97140b01423cb80765b5b3e5/activity-1.2.4-sources.jar!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </SOURCES>
   </library>
 </component>

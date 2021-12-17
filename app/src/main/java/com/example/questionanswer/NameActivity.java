@@ -25,14 +25,19 @@ import java.util.List;
 public class NameActivity extends AppCompatActivity {
 
     public static String id="";
+<<<<<<< HEAD
     public static String enumerator_name = "";
     public static String respondent_name="";
+=======
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     private EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name);
         Button button = findViewById(R.id.button1);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("test");
+        databaseReference.push().setValue("Testing");
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,8 +48,11 @@ public class NameActivity extends AppCompatActivity {
                     editText = (EditText) findViewById(R.id.editTextTextEmailAddress2);
                     String name = editText.getText().toString();
                     id = ((EditText)findViewById(R.id.editTextTextEmailAddress4)).getText().toString();
+<<<<<<< HEAD
                     enumerator_name = ((EditText)findViewById(R.id.editTextTextEmailAddress2)).getText().toString();
                     respondent_name = ((EditText)findViewById(R.id.editTextTextEmailAddress3)).getText().toString();
+=======
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
                     if (name.length() > 0) {
                         if(id.length()>0) {
                             intent.putExtra("name", name);

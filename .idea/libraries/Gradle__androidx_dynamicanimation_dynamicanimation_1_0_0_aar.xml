@@ -5,14 +5,24 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/AndroidManifest.xml" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/res" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/7dbe7daaf86f9f23e335d887282c06ad/transformed/dynamicanimation-1.0.0/res" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.dynamicanimation/dynamicanimation/1.0.0/5c050e29af5033ff5e2d58ccf657ae92fdfbda4a/dynamicanimation-1.0.0-sources.jar!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.dynamicanimation/dynamicanimation/1.0.0/5c050e29af5033ff5e2d58ccf657ae92fdfbda4a/dynamicanimation-1.0.0-sources.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.dynamicanimation/dynamicanimation/1.0.0/5c050e29af5033ff5e2d58ccf657ae92fdfbda4a/dynamicanimation-1.0.0-sources.jar!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </SOURCES>
   </library>
 </component>

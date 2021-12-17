@@ -24,7 +24,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
 import java.util.List;
 
 public class PracticeThirdActivity extends CustomActivity {
@@ -52,6 +55,7 @@ public class PracticeThirdActivity extends CustomActivity {
             TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
             textView = (TextView) tableRow.getChildAt(0);
             if(i==0)
+<<<<<<< HEAD
                 textView.setText("যদি ১০০০-২০০০ সঠিক হয়");
             else if(i==1)
                 textView.setText("যদি ২০০১-৩০০০ সঠিক হয়");
@@ -71,6 +75,27 @@ public class PracticeThirdActivity extends CustomActivity {
                 textView.setText("যদি ৯০০১-১০০০০ সঠিক হয়");
             else if(i==9)
                 textView.setText("যদি ১০০০১-১১০০০ সঠিক হয়");
+=======
+                textView.setText("যদি ০০০০০-১০০০০ সঠিক হয়");
+            else if(i==1)
+                textView.setText("যদি ১০০০১-২০০০০ সঠিক হয়");
+            else if(i==2)
+                textView.setText("যদি ২০০০১-৩০০০০ সঠিক হয়");
+            else if(i==3)
+                textView.setText("যদি ৩০০০১-৪০০০০ সঠিক হয়");
+            else if(i==4)
+                textView.setText("যদি ৪০০০১-৫০০০০ সঠিক হয়");
+            else if(i==5)
+                textView.setText("যদি ৫০০০১-৬০০০০ সঠিক হয়");
+            else if(i==6)
+                textView.setText("যদি ৬০০০১-৭০০০০ সঠিক হয়");
+            else if(i==7)
+                textView.setText("যদি ৭০০০১-৮০০০০ সঠিক হয়");
+            else if(i==8)
+                textView.setText("যদি ৮০০০১-৯০০০০ সঠিক হয়");
+            else if(i==9)
+                textView.setText("যদি ৯০০০১-১০০০০০ সঠিক হয়");
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
         }
     }
     public static int value[]={0,0,0,0,0,0,0,0,0,0};
@@ -83,8 +108,13 @@ public class PracticeThirdActivity extends CustomActivity {
         activity=this;
         setContentView(R.layout.activity_practice_third);
 
+<<<<<<< HEAD
         //language = "English";
        language= getIntent().getStringExtra("language");
+=======
+       // language = "English";
+        language= getIntent().getStringExtra("language");
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
 
 
         if(language.equalsIgnoreCase("Bangla"))
@@ -435,7 +465,11 @@ public class PracticeThirdActivity extends CustomActivity {
         return totalValue;
     }
 
+<<<<<<< HEAD
     public static HashMap<String,String> resp=new HashMap<>();
+=======
+    public static List<String> resp=new ArrayList<>();
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
 
     int totVal=0;
 
@@ -453,9 +487,14 @@ public class PracticeThirdActivity extends CustomActivity {
             totVal=10;
             TableLayout tableLayout = findViewById(R.id.table_layout);
             tableLayout.setVisibility(View.VISIBLE);
+<<<<<<< HEAD
             resp=getRes();
             //if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
               //  resp.add(getRes());
+=======
+            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
+                resp.add(getRes());
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
         }
         else{
             totVal=0;

@@ -2,21 +2,35 @@
   <library name="Gradle: androidx.print:print:1.0.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/annotations.zip!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/annotations.zip!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/annotations.zip!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/998ecad2e598076d0444e5b886cc28b2/transformed/print-1.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/AndroidManifest.xml" />
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/res" />
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/jars/classes.jar!/" />
+=======
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/res" />
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/jars/classes.jar!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.print/print/1.0.0/71fc2d9acf7cce6b96230c5af263268b1664914a/print-1.0.0-sources.jar!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.print/print/1.0.0/71fc2d9acf7cce6b96230c5af263268b1664914a/print-1.0.0-sources.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.print/print/1.0.0/71fc2d9acf7cce6b96230c5af263268b1664914a/print-1.0.0-sources.jar!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </SOURCES>
   </library>
 </component>

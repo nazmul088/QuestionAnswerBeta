@@ -5,14 +5,24 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/AndroidManifest.xml" />
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/res" />
+=======
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/transforms-3/695dfd7bac1babc775b9525822853c0b/transformed/vectordrawable-1.1.0/res" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.vectordrawable/vectordrawable/1.1.0/1e0694477eed874c50c54b547cc3e5a62a57a62b/vectordrawable-1.1.0-sources.jar!/" />
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/Desktop/work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.vectordrawable/vectordrawable/1.1.0/1e0694477eed874c50c54b547cc3e5a62a57a62b/vectordrawable-1.1.0-sources.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../work/WhitePad-20210923T192644Z-001/WhitePad/caches/modules-2/files-2.1/androidx.vectordrawable/vectordrawable/1.1.0/1e0694477eed874c50c54b547cc3e5a62a57a62b/vectordrawable-1.1.0-sources.jar!/" />
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
     </SOURCES>
   </library>
 </component>

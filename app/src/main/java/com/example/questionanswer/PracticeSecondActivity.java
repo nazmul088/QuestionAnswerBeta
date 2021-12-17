@@ -24,7 +24,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
 import java.util.List;
 
 public class PracticeSecondActivity extends CustomActivity {
@@ -430,7 +433,11 @@ public class PracticeSecondActivity extends CustomActivity {
         }
     }
 
+<<<<<<< HEAD
     public static HashMap<String,String>resp=new HashMap<>();
+=======
+    public static List<String>resp=new ArrayList<>();
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
 
     int totVal=0;
     public void setResultVisible()
@@ -446,9 +453,14 @@ public class PracticeSecondActivity extends CustomActivity {
             totVal=10;
             TableLayout tableLayout = findViewById(R.id.table_layout);
             tableLayout.setVisibility(View.VISIBLE);
+<<<<<<< HEAD
             resp=getRes();
             //if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
                 //resp.add(getRes());
+=======
+            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
+                resp.add(getRes());
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
         }
         else{
             totVal=0;

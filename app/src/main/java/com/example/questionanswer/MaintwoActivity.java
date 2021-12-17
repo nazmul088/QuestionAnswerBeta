@@ -434,7 +434,11 @@ public class MaintwoActivity extends CustomActivity {
         return totalValue;
     }
 
+<<<<<<< HEAD
     public static HashMap<String,String>resp=new HashMap<>();
+=======
+    public static List<String>resp=new ArrayList<>();
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
 
     int antirepeat=1;
 
@@ -449,14 +453,22 @@ public class MaintwoActivity extends CustomActivity {
             textView = (TextView) tdes[i];
             totalValue = totalValue + Integer.parseInt(textView.getText().toString());
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
         if(totalValue == 10&&totVal!=10)
         {
             TableLayout tableLayout = findViewById(R.id.table_layout);
             tableLayout.setVisibility(View.VISIBLE);
+<<<<<<< HEAD
             //if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
                 //resp.add(getRes());
             resp=getRes();
+=======
+            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
+                resp.add(getRes());
+>>>>>>> 193b0070f939f883e7d791121fd7ac2f88b83896
             totVal=10;
         }
         else{
