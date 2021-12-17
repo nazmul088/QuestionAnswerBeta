@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MaintwoActivity extends CustomActivity {
@@ -433,7 +434,7 @@ public class MaintwoActivity extends CustomActivity {
         return totalValue;
     }
 
-    public static List<String>resp=new ArrayList<>();
+    public static HashMap<String,String>resp=new HashMap<>();
 
     int antirepeat=1;
 
@@ -442,17 +443,20 @@ public class MaintwoActivity extends CustomActivity {
     public void setResultVisible()
     {
         int totalValue = 0;
+
         for(int i=0;i<10;i++)
         {
             textView = (TextView) tdes[i];
             totalValue = totalValue + Integer.parseInt(textView.getText().toString());
         }
+
         if(totalValue == 10&&totVal!=10)
         {
             TableLayout tableLayout = findViewById(R.id.table_layout);
             tableLayout.setVisibility(View.VISIBLE);
-            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
-                resp.add(getRes());
+            //if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
+                //resp.add(getRes());
+            resp=getRes();
             totVal=10;
         }
         else{

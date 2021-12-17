@@ -22,9 +22,19 @@ public class CustomActivity extends AppCompatActivity {
     public static RecyclerView lsrc;
     public static CardView src;
 
-    public List<String> res=new ArrayList<>();
+    public HashMap<String,String> res=new HashMap<>();
 
-    public String getRes()
+    public HashMap<String,String> getRes()
+    {
+        HashMap<String,String>has=new HashMap<>();
+        String s="";
+        for(int i=1;i<11;i++) {
+            has.put(hdes[i].getText().toString(),(tdes[i-1].getText().toString()));
+        }
+        return has;
+    }
+
+    public String getResOld()
     {
         String s="";
         for(int i=1;i<11;i++) {

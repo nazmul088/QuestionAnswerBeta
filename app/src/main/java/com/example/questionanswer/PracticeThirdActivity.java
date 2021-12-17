@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class PracticeThirdActivity extends CustomActivity {
@@ -434,7 +435,7 @@ public class PracticeThirdActivity extends CustomActivity {
         return totalValue;
     }
 
-    public static List<String> resp=new ArrayList<>();
+    public static HashMap<String,String> resp=new HashMap<>();
 
     int totVal=0;
 
@@ -452,8 +453,9 @@ public class PracticeThirdActivity extends CustomActivity {
             totVal=10;
             TableLayout tableLayout = findViewById(R.id.table_layout);
             tableLayout.setVisibility(View.VISIBLE);
-            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
-                resp.add(getRes());
+            resp=getRes();
+            //if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
+              //  resp.add(getRes());
         }
         else{
             totVal=0;

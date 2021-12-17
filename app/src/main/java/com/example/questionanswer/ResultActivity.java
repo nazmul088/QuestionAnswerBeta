@@ -29,6 +29,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.jar.Attributes;
 
 public class ResultActivity extends AppCompatActivity {
@@ -43,236 +44,236 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-        uploadToServer();
-//
-//        String game = getIntent().getStringExtra("game");
-//        String earnValue = getIntent().getStringExtra("earn");
-//        String lostValue = getIntent().getStringExtra("lost");
-//        String language = getIntent().getStringExtra("language");
-//
-//
-//
-//        if(game.equalsIgnoreCase("practice"))
-//        {
-//            textView = (TextView) findViewById(R.id.textView);
-//            textView.setAnimation(animation);
-//
-//            String str = "The correct answer to this question is 136."+ "Based on your allocation, you earned "+(Double.parseDouble(earnValue))+ " taka";
-//            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল ১৩৬"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+MyStaff.numBangla(Double.parseDouble(earnValue))+  "টাকা অর্জন করেছেন।\n";
-//
-//            if(language.equalsIgnoreCase("Bangla"))
-//            {
-//                context = LocaleHelper.setLocale(ResultActivity.this, "bn");
-//                resources = context.getResources();
-//
-//                textView = (TextView) findViewById(R.id.textView1);
-//                textView.setText(banglaStr);
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//                textView.setAnimation(animation);
-//
-//                textView = (TextView) findViewById(R.id.textView);
-//                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-//                textView.setAnimation(animation);
-//
-//            }
-//            else {
-//
-//                context = LocaleHelper.setLocale(ResultActivity.this, "en");
-//                resources = context.getResources();
-//                textView = (TextView) findViewById(R.id.textView1);
-//                textView.setText(str);
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//                textView.setAnimation(animation);
-//
-//                textView = (TextView) findViewById(R.id.textView);
-//                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-//
-//                textView.setAnimation(animation);
-//            }
-//        }
-//        else if(game.equalsIgnoreCase("practiceSecond"))
-//        {
-//            textView = (TextView) findViewById(R.id.textView);
-//            textView.setAnimation(animation);
-//
-//            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//            String str = "The correct answer to this question is 92.2%."+ "Based on your allocation, you earned "+(Double.parseDouble(earnValue))+ " taka";
-//            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল ৯২.২%। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+MyStaff.numBangla(Double.parseDouble(earnValue))+  "টাকা অর্জন করেছেন।\n";
-//
-//            if(language.equalsIgnoreCase("Bangla"))
-//            {
-//
-//                context = LocaleHelper.setLocale(ResultActivity.this, "bn");
-//                resources = context.getResources();
-//                textView = (TextView) findViewById(R.id.textView1);
-//                textView.setText(banglaStr);
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//                textView.setAnimation(animation);
-//
-//
-//                textView = (TextView) findViewById(R.id.textView);
-//                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-//                textView.setAnimation(animation);
-//            }
-//            else{
-//                context = LocaleHelper.setLocale(ResultActivity.this, "en");
-//                resources = context.getResources();
-//
-//                textView = (TextView) findViewById(R.id.textView1);
-//                textView.setText(str);
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//                textView.setAnimation(animation);
-//
-//                textView = (TextView) findViewById(R.id.textView);
-//                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-//                textView.setAnimation(animation);
-//            }
-//
-//        }
-//        else if(game.equalsIgnoreCase("practiceThird"))
-//        {
-//            textView = (TextView) findViewById(R.id.textView);
-//            textView.setAnimation(animation);
-//
-//            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//            String str = "The correct answer to this question is $70191 million."+ "Based on your allocation, you earned "+(Double.parseDouble(earnValue))+ " taka.";
-//            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল " +
-//                    "৭১৯১ হাজার কোটি টাকা"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+MyStaff.numBangla(Double.parseDouble(earnValue))+  "টাকা অর্জন করেছেন।\n";
-//            if(language.equalsIgnoreCase("Bangla"))
-//            {
-//                context = LocaleHelper.setLocale(ResultActivity.this, "bn");
-//                resources = context.getResources();
-//                textView = (TextView) findViewById(R.id.textView1);
-//                textView.setText(banglaStr);
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//                textView.setAnimation(animation);
-//
-//
-//                textView = (TextView) findViewById(R.id.textView);
-//                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-//                textView.setAnimation(animation);
-//            }
-//            else{
-//                context = LocaleHelper.setLocale(ResultActivity.this, "en");
-//                resources = context.getResources();
-//                textView = (TextView) findViewById(R.id.textView1);
-//                textView.setText(str);
-//
-//                textView = (TextView) findViewById(R.id.textView);
-//                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-//                textView.setAnimation(animation);
-//            }
-//
-//
-//        }
-//        else if(game.equalsIgnoreCase("secondQuestion"))
-//        {
-//            textView = (TextView) findViewById(R.id.textView);
-//            textView.setAnimation(animation);
-//
-//            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//            String str = "The correct answer to this question is 35.69%."+ "Based on your allocation, you earned "+earnValue+ " points and lost "+lostValue+" points";
-//            textView = (TextView) findViewById(R.id.textView1);
-//            textView.setText(str);
-//            textView.setAnimation(animation);
-//        }
-//        else if(game.equalsIgnoreCase("firstMainQuestion") || game.equalsIgnoreCase("SecondMainQuestion") || game.equalsIgnoreCase("thirdMainQuestion"))
-//        {
-//            textView = (TextView) findViewById(R.id.textView);
-//            textView.setAnimation(animation);
-//
-//            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//            String str = "We will calculate your earned bonus and send the amount in your firm’s mobile money account after the Endline Survey.";
-//            String banglaStr = "আমরা আপনার অর্জিত বোনাস হিসাব করবো এবং এন্ড লাইন সার্ভের পরে আপনার ফেক্টরি/কারখানার মোবাইল মানি অ্যাকাউন্টে টাকাটি পাঠিয়ে দিবো।\n";
-//
-//
-//            if(language.equalsIgnoreCase("Bangla"))
-//            {
-//                context = LocaleHelper.setLocale(ResultActivity.this, "bn");
-//                resources = context.getResources();
-//                textView = (TextView) findViewById(R.id.textView1);
-//                textView.setText(banglaStr);
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
-//                textView.setAnimation(animation);
-//
-//                textView = (TextView) findViewById(R.id.textView);
-//                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-//                textView.setAnimation(animation);
-//            }
-//            else{
-//                context = LocaleHelper.setLocale(ResultActivity.this, "en");
-//                resources = context.getResources();
-//                textView = (TextView) findViewById(R.id.textView1);
-//                textView.setText(str);
-//
-//                textView = (TextView) findViewById(R.id.textView);
-//                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
-//                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-//                textView.setAnimation(animation);
-//
-//            }
-//        }
-//
-//
-//
-//        button = (Button) findViewById(R.id.button1);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if(game.equalsIgnoreCase("practice"))
-//                {
-//                    Intent intent = new Intent(getApplicationContext(),PracticeSecondActivity.class);
-//                    intent.putExtra("language",language);
-//                    startActivity(intent);
-//                }
-//                if(game.equalsIgnoreCase("practiceSecond"))
-//                {
-//                    Intent intent = new Intent(getApplicationContext(),PracticeThirdActivity.class);
-//                    intent.putExtra("language",language);
-//                    startActivity(intent);
-//                }
-//                else if(game.equalsIgnoreCase("practiceThird"))
-//                {
-//                    Intent intent = new Intent(getApplicationContext(),PracticeSessionEndActivity.class);
-//                    intent.putExtra("language",language);
-//                    startActivity(intent);
-//                }
-//                else if(game.equalsIgnoreCase("secondQuestion"))
-//                {
-//                    Intent intent = new Intent(getApplicationContext(),PracticeSessionEndActivity.class);
-//                    intent.putExtra("language",language);
-//                    startActivity(intent);
-//                }
-//                else if(game.equalsIgnoreCase("firstMainQuestion"))
-//                {
-//                    Intent intent = new Intent(getApplicationContext(),SecondMainQuestionActivity.class);
-//                    intent.putExtra("language",language);
-//                    startActivity(intent);
-//                }
-//                else if(game.equalsIgnoreCase("secondMainQuestion"))
-//                {
-//                    Intent intent = new Intent(getApplicationContext(),ThirdMainQuestionActivity.class);
-//                    intent.putExtra("language",language);
-//                    startActivity(intent);
-//                }
-//                else if(game.equalsIgnoreCase("thirdMainQuestion"))
-//                {
-//                    //////////////////
-//                    uploadToServer();
-//
-//                    Intent intent = new Intent(getApplicationContext(),GameEndActivity.class);
-//                    intent.putExtra("language",language);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+        //uploadToServer();
+
+        String game = getIntent().getStringExtra("game");
+        String earnValue = getIntent().getStringExtra("earn");
+        String lostValue = getIntent().getStringExtra("lost");
+        String language = getIntent().getStringExtra("language");
+
+
+
+        if(game.equalsIgnoreCase("practice"))
+        {
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setAnimation(animation);
+
+            String str = "The correct answer to this question is 136."+ "Based on your allocation, you earned "+(Double.parseDouble(earnValue))+ " taka";
+            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল ১৩৬"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+MyStaff.numBangla(Double.parseDouble(earnValue))+  "টাকা অর্জন করেছেন।\n";
+
+            if(language.equalsIgnoreCase("Bangla"))
+            {
+                context = LocaleHelper.setLocale(ResultActivity.this, "bn");
+                resources = context.getResources();
+
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(banglaStr);
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+                textView.setAnimation(animation);
+
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+                textView.setAnimation(animation);
+
+            }
+            else {
+
+                context = LocaleHelper.setLocale(ResultActivity.this, "en");
+                resources = context.getResources();
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(str);
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+                textView.setAnimation(animation);
+
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+
+                textView.setAnimation(animation);
+            }
+        }
+        else if(game.equalsIgnoreCase("practiceSecond"))
+        {
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setAnimation(animation);
+
+            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+            String str = "The correct answer to this question is 92.2%."+ "Based on your allocation, you earned "+(Double.parseDouble(earnValue))+ " taka";
+            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল ৯২.২%। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+MyStaff.numBangla(Double.parseDouble(earnValue))+  "টাকা অর্জন করেছেন।\n";
+
+            if(language.equalsIgnoreCase("Bangla"))
+            {
+
+                context = LocaleHelper.setLocale(ResultActivity.this, "bn");
+                resources = context.getResources();
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(banglaStr);
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+                textView.setAnimation(animation);
+
+
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+                textView.setAnimation(animation);
+            }
+            else{
+                context = LocaleHelper.setLocale(ResultActivity.this, "en");
+                resources = context.getResources();
+
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(str);
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+                textView.setAnimation(animation);
+
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+                textView.setAnimation(animation);
+            }
+
+        }
+        else if(game.equalsIgnoreCase("practiceThird"))
+        {
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setAnimation(animation);
+
+            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+            String str = "The correct answer to this question is $70191 million."+ "Based on your allocation, you earned "+(Double.parseDouble(earnValue))+ " taka.";
+            String banglaStr="এই প্রশ্নের সঠিক উত্তর হল " +
+                    "৭১৯১ হাজার কোটি টাকা"+"। আপনার বরাদ্দের উপর ভিত্তি করে, আপনি "+MyStaff.numBangla(Double.parseDouble(earnValue))+  "টাকা অর্জন করেছেন।\n";
+            if(language.equalsIgnoreCase("Bangla"))
+            {
+                context = LocaleHelper.setLocale(ResultActivity.this, "bn");
+                resources = context.getResources();
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(banglaStr);
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+                textView.setAnimation(animation);
+
+
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+                textView.setAnimation(animation);
+            }
+            else{
+                context = LocaleHelper.setLocale(ResultActivity.this, "en");
+                resources = context.getResources();
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(str);
+
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+                textView.setAnimation(animation);
+            }
+
+
+        }
+        else if(game.equalsIgnoreCase("secondQuestion"))
+        {
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setAnimation(animation);
+
+            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+            String str = "The correct answer to this question is 35.69%."+ "Based on your allocation, you earned "+earnValue+ " points and lost "+lostValue+" points";
+            textView = (TextView) findViewById(R.id.textView1);
+            textView.setText(str);
+            textView.setAnimation(animation);
+        }
+        else if(game.equalsIgnoreCase("firstMainQuestion") || game.equalsIgnoreCase("SecondMainQuestion") || game.equalsIgnoreCase("thirdMainQuestion"))
+        {
+            textView = (TextView) findViewById(R.id.textView);
+            textView.setAnimation(animation);
+
+            animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+            String str = "We will calculate your earned bonus and send the amount in your firm’s mobile money account after the Endline Survey.";
+            String banglaStr = "আমরা আপনার অর্জিত বোনাস হিসাব করবো এবং এন্ড লাইন সার্ভের পরে আপনার ফেক্টরি/কারখানার মোবাইল মানি অ্যাকাউন্টে টাকাটি পাঠিয়ে দিবো।\n";
+
+
+            if(language.equalsIgnoreCase("Bangla"))
+            {
+                context = LocaleHelper.setLocale(ResultActivity.this, "bn");
+                resources = context.getResources();
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(banglaStr);
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+                textView.setAnimation(animation);
+
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+                textView.setAnimation(animation);
+            }
+            else{
+                context = LocaleHelper.setLocale(ResultActivity.this, "en");
+                resources = context.getResources();
+                textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(str);
+
+                textView = (TextView) findViewById(R.id.textView);
+                textView.setText(resources.getString(R.string.thank_you_for_your_answer));
+                animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+                textView.setAnimation(animation);
+
+            }
+        }
+
+
+
+        button = (Button) findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(game.equalsIgnoreCase("practice"))
+                {
+                    Intent intent = new Intent(getApplicationContext(),PracticeSecondActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                }
+                if(game.equalsIgnoreCase("practiceSecond"))
+                {
+                    Intent intent = new Intent(getApplicationContext(),PracticeThirdActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                }
+                else if(game.equalsIgnoreCase("practiceThird"))
+                {
+                    Intent intent = new Intent(getApplicationContext(),PracticeSessionEndActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                }
+                else if(game.equalsIgnoreCase("secondQuestion"))
+                {
+                    Intent intent = new Intent(getApplicationContext(),PracticeSessionEndActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                }
+                else if(game.equalsIgnoreCase("firstMainQuestion"))
+                {
+                    Intent intent = new Intent(getApplicationContext(),SecondMainQuestionActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                }
+                else if(game.equalsIgnoreCase("secondMainQuestion"))
+                {
+                    Intent intent = new Intent(getApplicationContext(),ThirdMainQuestionActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                }
+                else if(game.equalsIgnoreCase("thirdMainQuestion"))
+                {
+
+                    uploadToServer();
+
+                    Intent intent = new Intent(getApplicationContext(),GameEndActivity.class);
+                    intent.putExtra("language",language);
+                    startActivity(intent);
+                }
+            }
+        });
 
 
     }
@@ -296,24 +297,79 @@ public class ResultActivity extends AppCompatActivity {
 
     private void uploadToServer() {
         //Trying my code
-        ArrayList<GameItem> gameItems = new ArrayList<>();
+        DatabaseReference dbr=FirebaseDatabase.getInstance().getReference("counter");
+        dbr.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int size=0;
+                try{
+                    size=Integer.parseInt(snapshot.getValue().toString());
+                }catch (Exception e)
+                {
 
-        GameItem gameItem = new GameItem();
-        gameItem.id = "1233456";
-        gameItem.enumerator_name = "sajib";
-        gameItem.respondent_name = "karim";
-        gameItem.game1="1-10(9), 11-20(1)";
-        gameItem.game1Score = "199.1";
-        gameItem.game2="1-10(9), 11-20(1)";
-        gameItem.game2Score = "199.1";
-        gameItem.game3="1-10(9), 11-20(1)";
-        gameItem.game3Score = "199.1";
-        gameItems.add(gameItem);
-//        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
-//        databaseReference.child("game").child("0").setValue(gameItem);
+                }
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-        Query query = databaseReference.child("game").orderByKey();
+                HashMap<String,String>main=new HashMap<>();
+                main.put("id",NameActivity.id);
+                main.put("enumerator_name",NameActivity.enumerator_name);
+                main.put("respondent_name",NameActivity.respondent_name);
+
+                List<HashMap<String,String>>lists=new ArrayList<>();
+                lists.add(MaintwoActivity.resp);
+                lists.add(PracticeSecondActivity.resp);
+                lists.add(PracticeThirdActivity.resp);
+                lists.add(FirstMainQuestionActivity.resp);
+                lists.add(SecondMainQuestionActivity.resp);
+                lists.add(ThirdMainQuestionActivity.resp);
+
+
+                ArrayList<GameItem> gameItems = new ArrayList<>();
+
+                GameItem gameItem = new GameItem();
+                gameItem.id = "1233456";
+                gameItem.enumerator_name = "sajib";
+                gameItem.respondent_name = "karim";
+                gameItem.game1="1-10(9), 11-20(1)";
+                gameItem.game1Score = "199.1";
+                gameItem.game2="1-10(9), 11-20(1)";
+                gameItem.game2Score = "199.1";
+                gameItem.game3="1-10(9), 11-20(1)";
+                gameItem.game3Score = "199.1";
+
+
+                for(int i=0;i<lists.size();i++)
+                {
+                    HashMap<String,String>map=lists.get(i);
+                    int ii=1;
+                    for (Map.Entry<String, String> entry : map.entrySet()) {
+                        main.put("game"+(i+1)+"_box"+ii,entry.getValue());
+                        ii++;
+                    }
+                }
+
+                main.put("game1Score",MaintwoActivity.resultString);
+                main.put("game2Score",PracticeSecondActivity.resultString);
+                main.put("game3Score",PracticeThirdActivity.resultString);
+                main.put("game4Score",FirstMainQuestionActivity.resultString);
+                main.put("game5Score",SecondMainQuestionActivity.resultString);
+                main.put("game6Score",ThirdMainQuestionActivity.resultString);
+                size++;
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+                databaseReference.child("game/"+size).setValue(main);
+                databaseReference.child("counter").setValue(size);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        //Query query = databaseReference.child("game").orderByKey();
+
+
+/*
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -336,41 +392,35 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-        //Apurbo's Code
-        //Toast.makeText(ResultActivity.this, "toadting", Toast.LENGTH_SHORT).show();
-//        List itemList=new ArrayList();
-//        HashMap<String,List> hashMap=new HashMap<>();
-//        DatabaseReference ref= FirebaseDatabase.getInstance().getReference();
-//        String[] names = {"51-60(2)_61-70(4)_71-80(1)_61-70(4)_71-80(1)","61-70(4)_71-80(1)","61-70(4)_71-80(1)","61-70(4)_71-80(1)"};
-//
-//        List nameList = new ArrayList<String>(Arrays.asList(names));
-//
-//        MaintwoActivity.resp.add(0,MaintwoActivity.resultString);
-//        PracticeSecondActivity.resp.add(0,PracticeSecondActivity.resultString);
-//        PracticeThirdActivity.resp.add(0,PracticeThirdActivity.resultString);
-//        FirstMainQuestionActivity.resp.add(0,FirstMainQuestionActivity.resultString);
-//        SecondMainQuestionActivity.resp.add(0,SecondMainQuestionActivity.resultString);
-//        ThirdMainQuestionActivity.resp.add(0,ThirdMainQuestionActivity.resultString);
-//        hashMap.put("id", Collections.singletonList(NameActivity.id));
-//        hashMap.put("Enumerator Name", Collections.singletonList(NameActivity.enumerator_name));
-//        hashMap.put("Respondant Name", Collections.singletonList(NameActivity.respondent_name));
-//        hashMap.put("0f",MaintwoActivity.resp);
-//        hashMap.put("1f",PracticeSecondActivity.resp);
-//        hashMap.put("2f",PracticeThirdActivity.resp);
-//        hashMap.put("3f",FirstMainQuestionActivity.resp);
-//        hashMap.put("4f",SecondMainQuestionActivity.resp);
-//        hashMap.put("5f",ThirdMainQuestionActivity.resp);
-//
-//// Now set value with new nameList
-//        ref.push().setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Void> task) {
-//                Toast.makeText(ResultActivity.this, "Data Uploaded Successfully", Toast.LENGTH_LONG).show();
-//            }
-//        });
+ */
     }
+
+
+    /*private void uploadToServer2() {
+        //Toast.makeText(ResultActivity.this, "toadting", Toast.LENGTH_SHORT).show();
+        List itemList=new ArrayList();
+        HashMap<String,List> hashMap=new HashMap<>();
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference(NameActivity.id);
+        String[] names = {"51-60(2)_61-70(4)_71-80(1)_61-70(4)_71-80(1)","61-70(4)_71-80(1)","61-70(4)_71-80(1)","61-70(4)_71-80(1)"};
+
+        List nameList = new ArrayList<String>(Arrays.asList(names));
+
+        MaintwoActivity.resp.add(0,MaintwoActivity.resultString);
+        PracticeSecondActivity.resp.add(0,PracticeSecondActivity.resultString);
+        PracticeThirdActivity.resp.add(0,PracticeThirdActivity.resultString);
+        FirstMainQuestionActivity.resp.add(0,FirstMainQuestionActivity.resultString);
+        SecondMainQuestionActivity.resp.add(0,SecondMainQuestionActivity.resultString);
+        ThirdMainQuestionActivity.resp.add(0,ThirdMainQuestionActivity.resultString);
+
+        hashMap.put("0f",MaintwoActivity.resp);
+        hashMap.put("1f",PracticeSecondActivity.resp);
+        hashMap.put("2f",PracticeThirdActivity.resp);
+        hashMap.put("3f",FirstMainQuestionActivity.resp);
+        hashMap.put("4f",SecondMainQuestionActivity.resp);
+        hashMap.put("5f",ThirdMainQuestionActivity.resp);
+
+// Now set value with new nameList
+        ref.setValue(hashMap);
+    }*/
+
 }
