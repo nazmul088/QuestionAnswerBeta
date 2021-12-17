@@ -1,11 +1,8 @@
 package com.example.questionanswer;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,445 +13,361 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class FirstMainQuestionActivity extends CustomActivity {
-    public static String resultString = "";
-
-    private Button button;
-    private TextView textView;
-
     public static Activity activity;
-    double a=3000;
-    double b=1500;
+    public static boolean ended = false;
+    public static HashMap<String, String> resp = new HashMap<>();
+    public static String resultString = "";
+    public static int[] value = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-    public static boolean ended=false;
+    /* renamed from: a */
+    double f2a = 3000.0d;
 
-    private String language;
+    /* renamed from: b */
+    double f3b = 1500.0d;
+    private Button button;
     private Context context;
+    /* access modifiers changed from: private */
+    public String language;
     private Resources resources;
-
+    /* access modifiers changed from: private */
+    public TextView textView;
+    int totVal = 0;
 
     private void setupTableBangla() {
         TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
-        for(int i=0;i<10;i++)
-        {
-            double temp = calculateResult(i);
-            TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
-            textView = (TextView) tableRow.getChildAt(0);
-            if(i==0)
-                textView.setText("যদি ০-০.৫ সঠিক হয়");
-            else if(i==1)
-                textView.setText("যদি ০.৫-১ সঠিক হয়");
-            if(i==2)
-                textView.setText("যদি ১-১.৫ সঠিক হয়");
-            else if(i==3)
-                textView.setText("যদি ১.৫-২ সঠিক হয়");
-            else if(i==4)
-                textView.setText("যদি ২-২.৫ সঠিক হয়");
-            else if(i==5)
-                textView.setText("যদি ২.৫-৩ সঠিক হয়");
-            else if(i==6)
-                textView.setText("যদি ৩-৩.৫ সঠিক হয়");
-            else if(i==7)
-                textView.setText("যদি ৩.৫-৪ সঠিক হয়");
-            else if(i==8)
-                textView.setText("যদি ৪-৪.৫ সঠিক হয়");
-            else if(i==9)
-                textView.setText("যদি ৪.৫-৫ সঠিক হয়");
+        for (int i = 0; i < 10; i++) {
+            double calculateResult = calculateResult(i);
+            TextView textView2 = (TextView) ((TableRow) tableLayout.getChildAt(i + 1)).getChildAt(0);
+            this.textView = textView2;
+            if (i == 0) {
+                textView2.setText("যদি ০-০.৫ সঠিক হয়");
+            } else if (i == 1) {
+                textView2.setText("যদি ০.৫-১ সঠিক হয়");
+            }
+            if (i == 2) {
+                this.textView.setText("যদি ১-১.৫ সঠিক হয়");
+            } else if (i == 3) {
+                this.textView.setText("যদি ১.৫-২ সঠিক হয়");
+            } else if (i == 4) {
+                this.textView.setText("যদি ২-২.৫ সঠিক হয়");
+            } else if (i == 5) {
+                this.textView.setText("যদি ২.৫-৩ সঠিক হয়");
+            } else if (i == 6) {
+                this.textView.setText("যদি ৩-৩.৫ সঠিক হয়");
+            } else if (i == 7) {
+                this.textView.setText("যদি ৩.৫-৪ সঠিক হয়");
+            } else if (i == 8) {
+                this.textView.setText("যদি ৪-৪.৫ সঠিক হয়");
+            } else if (i == 9) {
+                this.textView.setText("যদি ৪.৫-৫ সঠিক হয়");
+            }
         }
     }
 
-
-    public static int value[]={0,0,0,0,0,0,0,0,0,0};
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    /* access modifiers changed from: protected */
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        il=new ItemList[11];
-        activity=this;
-        setContentView(R.layout.activity_first_main_question);
-
-        language= getIntent().getStringExtra("language");
-        if(language.equalsIgnoreCase("Bangla"))
+        il = new ItemList[11];
+        activity = this;
+        setContentView((int) R.layout.activity_first_main_question);
+        String stringExtra = getIntent().getStringExtra("language");
+        this.language = stringExtra;
+        if (stringExtra.equalsIgnoreCase("Bangla")) {
             setupTableBangla();
-
-        //language = "Bangla";
-        if(language.equalsIgnoreCase("Bangla"))
-        {
-            context = LocaleHelper.setLocale(FirstMainQuestionActivity.this, "bn");
-            resources = context.getResources();
-            textView = (TextView) findViewById(R.id.textView);
-            textView.setText(resources.getString(R.string.mainQuestion1));
-            textView = (TextView) findViewById(R.id.h1);
-            textView.setText(resources.getString(R.string.q_4_o_1));
-
-            textView = (TextView) findViewById(R.id.h2);
-            textView.setText(resources.getString(R.string.q_4_o_2));
-
-            textView = (TextView) findViewById(R.id.h3);
-            textView.setText(resources.getString(R.string.q_4_o_3));
-
-            textView = (TextView) findViewById(R.id.h4);
-            textView.setText(resources.getString(R.string.q_4_o_4));
-
-            textView = (TextView) findViewById(R.id.h5);
-            textView.setText(resources.getString(R.string.q_4_o_5));
-
-            textView = (TextView) findViewById(R.id.h6);
-            textView.setText(resources.getString(R.string.q_4_o_6));
-
-            textView = (TextView) findViewById(R.id.h7);
-            textView.setText(resources.getString(R.string.q_4_o_7));
-
-            textView = (TextView) findViewById(R.id.h8);
-            textView.setText(resources.getString(R.string.q_4_o_8));
-
-            textView = (TextView) findViewById(R.id.h9);
-            textView.setText(resources.getString(R.string.q_4_o_9));
-
-            textView = (TextView) findViewById(R.id.h10);
-            textView.setText(resources.getString(R.string.q_4_o_10));
-
         }
-        else{
-            context = LocaleHelper.setLocale(FirstMainQuestionActivity.this, "en");
-            resources = context.getResources();
-            textView = (TextView) findViewById(R.id.textView);
-            textView.setText(resources.getString(R.string.mainQuestion1));
-
-            textView = (TextView) findViewById(R.id.h1);
-            textView.setText(resources.getString(R.string.q_4_o_1));
-
-            textView = (TextView) findViewById(R.id.h2);
-            textView.setText(resources.getString(R.string.q_4_o_2));
-
-            textView = (TextView) findViewById(R.id.h3);
-            textView.setText(resources.getString(R.string.q_4_o_3));
-
-            textView = (TextView) findViewById(R.id.h4);
-            textView.setText(resources.getString(R.string.q_4_o_4));
-
-            textView = (TextView) findViewById(R.id.h5);
-            textView.setText(resources.getString(R.string.q_4_o_5));
-
-            textView = (TextView) findViewById(R.id.h6);
-            textView.setText(resources.getString(R.string.q_4_o_6));
-
-            textView = (TextView) findViewById(R.id.h7);
-            textView.setText(resources.getString(R.string.q_4_o_7));
-
-            textView = (TextView) findViewById(R.id.h8);
-            textView.setText(resources.getString(R.string.q_4_o_8));
-
-            textView = (TextView) findViewById(R.id.h9);
-            textView.setText(resources.getString(R.string.q_4_o_9));
-
-            textView = (TextView) findViewById(R.id.h10);
-            textView.setText(resources.getString(R.string.q_4_o_10));
-
+        if (this.language.equalsIgnoreCase("Bangla")) {
+            Context locale = LocaleHelper.setLocale(this, "bn");
+            this.context = locale;
+            this.resources = locale.getResources();
+            TextView textView2 = (TextView) findViewById(R.id.textView);
+            this.textView = textView2;
+            textView2.setText(this.resources.getString(R.string.mainQuestion1));
+            TextView textView3 = (TextView) findViewById(R.id.h1);
+            this.textView = textView3;
+            textView3.setText(this.resources.getString(R.string.q_4_o_1));
+            TextView textView4 = (TextView) findViewById(R.id.h2);
+            this.textView = textView4;
+            textView4.setText(this.resources.getString(R.string.q_4_o_2));
+            TextView textView5 = (TextView) findViewById(R.id.h3);
+            this.textView = textView5;
+            textView5.setText(this.resources.getString(R.string.q_4_o_3));
+            TextView textView6 = (TextView) findViewById(R.id.h4);
+            this.textView = textView6;
+            textView6.setText(this.resources.getString(R.string.q_4_o_4));
+            TextView textView7 = (TextView) findViewById(R.id.h5);
+            this.textView = textView7;
+            textView7.setText(this.resources.getString(R.string.q_4_o_5));
+            TextView textView8 = (TextView) findViewById(R.id.h6);
+            this.textView = textView8;
+            textView8.setText(this.resources.getString(R.string.q_4_o_6));
+            TextView textView9 = (TextView) findViewById(R.id.h7);
+            this.textView = textView9;
+            textView9.setText(this.resources.getString(R.string.q_4_o_7));
+            TextView textView10 = (TextView) findViewById(R.id.h8);
+            this.textView = textView10;
+            textView10.setText(this.resources.getString(R.string.q_4_o_8));
+            TextView textView11 = (TextView) findViewById(R.id.h9);
+            this.textView = textView11;
+            textView11.setText(this.resources.getString(R.string.q_4_o_9));
+            TextView textView12 = (TextView) findViewById(R.id.h10);
+            this.textView = textView12;
+            textView12.setText(this.resources.getString(R.string.q_4_o_10));
+        } else {
+            Context locale2 = LocaleHelper.setLocale(this, "en");
+            this.context = locale2;
+            this.resources = locale2.getResources();
+            TextView textView13 = (TextView) findViewById(R.id.textView);
+            this.textView = textView13;
+            textView13.setText(this.resources.getString(R.string.mainQuestion1));
+            TextView textView14 = (TextView) findViewById(R.id.h1);
+            this.textView = textView14;
+            textView14.setText(this.resources.getString(R.string.q_4_o_1));
+            TextView textView15 = (TextView) findViewById(R.id.h2);
+            this.textView = textView15;
+            textView15.setText(this.resources.getString(R.string.q_4_o_2));
+            TextView textView16 = (TextView) findViewById(R.id.h3);
+            this.textView = textView16;
+            textView16.setText(this.resources.getString(R.string.q_4_o_3));
+            TextView textView17 = (TextView) findViewById(R.id.h4);
+            this.textView = textView17;
+            textView17.setText(this.resources.getString(R.string.q_4_o_4));
+            TextView textView18 = (TextView) findViewById(R.id.h5);
+            this.textView = textView18;
+            textView18.setText(this.resources.getString(R.string.q_4_o_5));
+            TextView textView19 = (TextView) findViewById(R.id.h6);
+            this.textView = textView19;
+            textView19.setText(this.resources.getString(R.string.q_4_o_6));
+            TextView textView20 = (TextView) findViewById(R.id.h7);
+            this.textView = textView20;
+            textView20.setText(this.resources.getString(R.string.q_4_o_7));
+            TextView textView21 = (TextView) findViewById(R.id.h8);
+            this.textView = textView21;
+            textView21.setText(this.resources.getString(R.string.q_4_o_8));
+            TextView textView22 = (TextView) findViewById(R.id.h9);
+            this.textView = textView22;
+            textView22.setText(this.resources.getString(R.string.q_4_o_9));
+            TextView textView23 = (TextView) findViewById(R.id.h10);
+            this.textView = textView23;
+            textView23.setText(this.resources.getString(R.string.q_4_o_10));
         }
-
-
-
-
-        lsrc=findViewById(R.id.lsrc);
-        src=findViewById(R.id.src);
-        ldes[0]=findViewById(R.id.ldes1);
-        ldes[1]=findViewById(R.id.ldes2);
-        ldes[2]=findViewById(R.id.ldes3);
-        ldes[3]=findViewById(R.id.ldes4);
-        ldes[4]=findViewById(R.id.ldes5);
-        ldes[5]=findViewById(R.id.ldes6);
-        ldes[6]=findViewById(R.id.ldes7);
-        ldes[7]=findViewById(R.id.ldes8);
-        ldes[8]=findViewById(R.id.ldes9);
-        ldes[9]=findViewById(R.id.ldes10);
-
-
-        des[0]=findViewById(R.id.des1);
-        des[1]=findViewById(R.id.des2);
-        des[2]=findViewById(R.id.des3);
-        des[3]=findViewById(R.id.des4);
-        des[4]=findViewById(R.id.des5);
-        des[5]=findViewById(R.id.des6);
-        des[6]=findViewById(R.id.des7);
-        des[7]=findViewById(R.id.des8);
-        des[8]=findViewById(R.id.des9);
-        des[9]=findViewById(R.id.des10);
-
-
-        tdes[0]=findViewById(R.id.tdes1);
-        tdes[1]=findViewById(R.id.tdes2);
-        tdes[2]=findViewById(R.id.tdes3);
-        tdes[3]=findViewById(R.id.tdes4);
-        tdes[4]=findViewById(R.id.tdes5);
-        tdes[5]=findViewById(R.id.tdes6);
-        tdes[6]=findViewById(R.id.tdes7);
-        tdes[7]=findViewById(R.id.tdes8);
-        tdes[8]=findViewById(R.id.tdes9);
-        tdes[9]=findViewById(R.id.tdes10);
-        tdes[10]=findViewById(R.id.tsrc);
-
-
-        hdes[0]=findViewById(R.id.textView20);
-        hdes[1]=findViewById(R.id.h1);
-        hdes[2]=findViewById(R.id.h2);
-        hdes[3]=findViewById(R.id.h3);
-        hdes[4]=findViewById(R.id.h4);
-        hdes[5]=findViewById(R.id.h5);
-        hdes[6]=findViewById(R.id.h6);
-        hdes[7]=findViewById(R.id.h7);
-        hdes[8]=findViewById(R.id.h8);
-        hdes[9]=findViewById(R.id.h9);
-        hdes[10]=findViewById(R.id.h10);
-
-        root=findViewById(R.id.root);
-
-
-        List<DataItem>list=new ArrayList<>();
-        list.add(new DataItem(1,"#aa9955"));
-        list.add(new DataItem(2,"#99aa55"));
-        list.add(new DataItem(3,"#5599aa"));
-        list.add(new DataItem(4,"#ff7733"));
-        list.add(new DataItem(5,"#77ff33"));
-        list.add(new DataItem(6,"#3377ff"));
-        list.add(new DataItem(7,"#cc1133"));
-        list.add(new DataItem(8,"#11cc33"));
-        list.add(new DataItem(9,"#3311cc"));
-        list.add(new DataItem(10,"#cc00aa"));
-
-
-        button = (Button) findViewById(R.id.button1);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
+        lsrc = (RecyclerView) findViewById(R.id.lsrc);
+        src = (CardView) findViewById(R.id.src);
+        ldes[0] = (RecyclerView) findViewById(R.id.ldes1);
+        ldes[1] = (RecyclerView) findViewById(R.id.ldes2);
+        ldes[2] = (RecyclerView) findViewById(R.id.ldes3);
+        ldes[3] = (RecyclerView) findViewById(R.id.ldes4);
+        ldes[4] = (RecyclerView) findViewById(R.id.ldes5);
+        ldes[5] = (RecyclerView) findViewById(R.id.ldes6);
+        ldes[6] = (RecyclerView) findViewById(R.id.ldes7);
+        ldes[7] = (RecyclerView) findViewById(R.id.ldes8);
+        ldes[8] = (RecyclerView) findViewById(R.id.ldes9);
+        ldes[9] = (RecyclerView) findViewById(R.id.ldes10);
+        des[0] = (CardView) findViewById(R.id.des1);
+        des[1] = (CardView) findViewById(R.id.des2);
+        des[2] = (CardView) findViewById(R.id.des3);
+        des[3] = (CardView) findViewById(R.id.des4);
+        des[4] = (CardView) findViewById(R.id.des5);
+        des[5] = (CardView) findViewById(R.id.des6);
+        des[6] = (CardView) findViewById(R.id.des7);
+        des[7] = (CardView) findViewById(R.id.des8);
+        des[8] = (CardView) findViewById(R.id.des9);
+        des[9] = (CardView) findViewById(R.id.des10);
+        tdes[0] = (TextView) findViewById(R.id.tdes1);
+        tdes[1] = (TextView) findViewById(R.id.tdes2);
+        tdes[2] = (TextView) findViewById(R.id.tdes3);
+        tdes[3] = (TextView) findViewById(R.id.tdes4);
+        tdes[4] = (TextView) findViewById(R.id.tdes5);
+        tdes[5] = (TextView) findViewById(R.id.tdes6);
+        tdes[6] = (TextView) findViewById(R.id.tdes7);
+        tdes[7] = (TextView) findViewById(R.id.tdes8);
+        tdes[8] = (TextView) findViewById(R.id.tdes9);
+        tdes[9] = (TextView) findViewById(R.id.tdes10);
+        tdes[10] = (TextView) findViewById(R.id.tsrc);
+        hdes[0] = (TextView) findViewById(R.id.textView20);
+        hdes[1] = (TextView) findViewById(R.id.h1);
+        hdes[2] = (TextView) findViewById(R.id.h2);
+        hdes[3] = (TextView) findViewById(R.id.h3);
+        hdes[4] = (TextView) findViewById(R.id.h4);
+        hdes[5] = (TextView) findViewById(R.id.h5);
+        hdes[6] = (TextView) findViewById(R.id.h6);
+        hdes[7] = (TextView) findViewById(R.id.h7);
+        hdes[8] = (TextView) findViewById(R.id.h8);
+        hdes[9] = (TextView) findViewById(R.id.h9);
+        hdes[10] = (TextView) findViewById(R.id.h10);
+        root = (ConstraintLayout) findViewById(R.id.root);
+        List<DataItem> list = new ArrayList<>();
+        list.add(new DataItem(1, "#aa9955"));
+        list.add(new DataItem(2, "#99aa55"));
+        list.add(new DataItem(3, "#5599aa"));
+        list.add(new DataItem(4, "#ff7733"));
+        list.add(new DataItem(5, "#77ff33"));
+        list.add(new DataItem(6, "#3377ff"));
+        list.add(new DataItem(7, "#cc1133"));
+        list.add(new DataItem(8, "#11cc33"));
+        list.add(new DataItem(9, "#3311cc"));
+        list.add(new DataItem(10, "#cc00aa"));
+        Button button2 = (Button) findViewById(R.id.button1);
+        this.button = button2;
+        button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
-                textView = (TextView) findViewById(R.id.tsrc);
-                if(textView.getText().toString().equals("0"))
-                {
-                    double result;
-                    double lostValue;
-                    if(!ended) {
-                        for(int i=0;i<10;i++)
-                        {
-                            value[i]=Integer.parseInt(tdes[i].getText().toString());
+                double result;
+                double lostValue;
+                FirstMainQuestionActivity firstMainQuestionActivity = FirstMainQuestionActivity.this;
+                TextView unused = firstMainQuestionActivity.textView = (TextView) firstMainQuestionActivity.findViewById(R.id.tsrc);
+                if (FirstMainQuestionActivity.this.textView.getText().toString().equals("0")) {
+                    if (!FirstMainQuestionActivity.ended) {
+                        for (int i = 0; i < 10; i++) {
+                            FirstMainQuestionActivity.value[i] = Integer.parseInt(CustomActivity.tdes[i].getText().toString());
                         }
-                        result = calculateResult(3);
-                        lostValue = 100 - result;
-                        ended=true;
+                        result = FirstMainQuestionActivity.this.calculateResult(3);
+                        lostValue = 100.0d - result;
+                        FirstMainQuestionActivity.ended = true;
+                    } else {
+                        result = Double.parseDouble(FirstMainQuestionActivity.resultString);
+                        lostValue = 100.0d - result;
                     }
-                    else
-                    {
-                        result=Double.parseDouble(resultString);
-                        lostValue=100-result;
-                    }
-
-                    Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
-                    intent.putExtra("game","firstMainQuestion");
-                    resultString=String.valueOf(result);
-                    intent.putExtra("earn",String.valueOf(result));
-                    intent.putExtra("lost",String.valueOf(lostValue));
-                    intent.putExtra("language",language);
-                    startActivity(intent);
-                    /*AlertDialog.Builder builder = new AlertDialog.Builder(MaintwoActivity.this);
-                    builder.setMessage("The correct answer to this question is 37."+ "Based on your allocation, you earned "+result+ " points and lost "+lostValue+" points").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            startActivity(new Intent(MaintwoActivity.this,SecondQuestionActivity.class));
-                        }
-                    });
-
-                    builder.setCancelable(false);
-                    AlertDialog alert = builder.create();
-                    //Setting the title manually
-                    alert.setTitle("Thank you for your answer.");
-                    alert.show();*/
-
-                }
-                else{
-                    Toast.makeText(FirstMainQuestionActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(FirstMainQuestionActivity.this.getApplicationContext(), ResultActivity.class);
+                    intent.putExtra("game", "firstMainQuestion");
+                    FirstMainQuestionActivity.resultString = String.valueOf(result);
+                    intent.putExtra("earn", String.valueOf(result));
+                    intent.putExtra("lost", String.valueOf(lostValue));
+                    intent.putExtra("language", FirstMainQuestionActivity.this.language);
+                    FirstMainQuestionActivity.this.startActivity(intent);
                     return;
                 }
+                Toast.makeText(FirstMainQuestionActivity.this, "Please Drag all Icon from Source Box", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-        if(ended==true)
-        {
-            List<DataItem>listsrc=new ArrayList<>();
-            List<List<DataItem>>desLists=new ArrayList<>();
-            for(int i=0;i<10;i++)
-            {
-                List<DataItem>dlists=new ArrayList<>();
-                for(int j=0;j<value[i];j++)
-                    dlists.add(new DataItem(j,""));
+        if (ended) {
+            new ArrayList();
+            List<List<DataItem>> desLists = new ArrayList<>();
+            for (int i = 0; i < 10; i++) {
+                List<DataItem> dlists = new ArrayList<>();
+                for (int j = 0; j < value[i]; j++) {
+                    dlists.add(new DataItem(j, ""));
+                }
                 desLists.add(dlists);
             }
-
-            for(int i=0;i<10;i++)
-            {
-                ldes[i].setHasFixedSize(true);
-                ldes[i].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-                List<DataItem>list1=desLists.get(i);
-                il[i+1]=new ItemList(activity,list1,des[i],ldes[i],tdes[i]);
-                ldes[i].setAdapter(il[i+1]);
-                tdes[i].setText(""+list1.size());
+            for (int i2 = 0; i2 < 10; i2++) {
+                ldes[i2].setHasFixedSize(true);
+                ldes[i2].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+                List<DataItem> list1 = desLists.get(i2);
+                il[i2 + 1] = new ItemList(activity, list1, des[i2], ldes[i2], tdes[i2]);
+                ldes[i2].setAdapter(il[i2 + 1]);
+                TextView textView24 = tdes[i2];
+                textView24.setText("" + list1.size());
             }
-
             TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
             tableLayout.setVisibility(View.VISIBLE);
-            for(int i=0;i<10;i++)
-            {
-                double temp = calculateResult(i);
-                TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
-                textView = (TextView) tableRow.getChildAt(1);
-                if(language.equalsIgnoreCase("Bangla"))
-                    textView.setText(MyStaff.numBangla(temp));
-                else
-                    textView.setText(String.valueOf(temp));
+            for (int i3 = 0; i3 < 10; i3++) {
+                double temp = calculateResult(i3);
+                this.textView = (TextView) ((TableRow) tableLayout.getChildAt(i3 + 1)).getChildAt(1);
+                if (this.language.equalsIgnoreCase("Bangla")) {
+                    this.textView.setText(MyStaff.numBangla(temp));
+                } else {
+                    this.textView.setText(String.valueOf(temp));
+                }
             }
-
             return;
         }
-
-
-        for(int i=0;i<10;i++)
-        {
-            textView = (TextView) tdes[i];
-            textView.addTextChangedListener(new TextWatcher() {
-                @Override
+        for (int i4 = 0; i4 < 10; i4++) {
+            TextView textView25 = tdes[i4];
+            this.textView = textView25;
+            textView25.addTextChangedListener(new TextWatcher() {
                 public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
                 }
 
-                @Override
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
                 }
 
-                @Override
                 public void afterTextChanged(Editable editable) {
-                    setResultVisible();
-
-                    String str="";
-                    int start = 1;
-                    TableLayout tableLayout = (TableLayout) findViewById(R.id.table_layout);
-                    for(int i=0;i<10;i++)
-                    {
-                        double temp = calculateResult(i);
-                        TableRow tableRow = (TableRow)tableLayout.getChildAt(i+1);
-                        textView = (TextView) tableRow.getChildAt(1);
-                        if(language.equalsIgnoreCase("Bangla"))
-                            textView.setText(MyStaff.numBangla(temp));
-                        else
-                            textView.setText(String.valueOf(temp));
+                    FirstMainQuestionActivity.this.setResultVisible();
+                    TableLayout tableLayout = (TableLayout) FirstMainQuestionActivity.this.findViewById(R.id.table_layout);
+                    for (int i = 0; i < 10; i++) {
+                        double temp = FirstMainQuestionActivity.this.calculateResult(i);
+                        TextView unused = FirstMainQuestionActivity.this.textView = (TextView) ((TableRow) tableLayout.getChildAt(i + 1)).getChildAt(1);
+                        if (FirstMainQuestionActivity.this.language.equalsIgnoreCase("Bangla")) {
+                            FirstMainQuestionActivity.this.textView.setText(MyStaff.numBangla(temp));
+                        } else {
+                            FirstMainQuestionActivity.this.textView.setText(String.valueOf(temp));
+                        }
                     }
                 }
             });
         }
-
-        for(int i=0;i<10;i++)
-        {
-            ldes[i].setHasFixedSize(true);
-            ldes[i].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-            List<DataItem>list1=new ArrayList<>();
-            il[i+1]=new ItemList(activity,list1,des[i],ldes[i],tdes[i]);
-            ldes[i].setAdapter(il[i+1]);
+        for (int i5 = 0; i5 < 10; i5++) {
+            ldes[i5].setHasFixedSize(true);
+            ldes[i5].setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+            il[i5 + 1] = new ItemList(activity, new ArrayList<>(), des[i5], ldes[i5], tdes[i5]);
+            ldes[i5].setAdapter(il[i5 + 1]);
         }
-
         lsrc.setHasFixedSize(true);
         lsrc.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
         lsrc.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            int x=0,y=0;
-            @Override
+
+            /* renamed from: x */
+            int f4x = 0;
+
+            /* renamed from: y */
+            int f5y = 0;
+
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                x+=dx;
-                //Toast.makeText(MaintwoActivity.this, x+" "+dx+" "+dy, Toast.LENGTH_SHORT).show();
+                this.f4x += dx;
             }
         });
-
-        il[0]=new ItemList(activity,list,0,src,lsrc,tdes[10]);
+        il[0] = new ItemList(activity, list, 0, src, lsrc, tdes[10]);
         lsrc.setAdapter(il[0]);
-
     }
 
-    private double calculateResult(int rightValuePosition) {
-        double totalValue = (a-b);
+    /* access modifiers changed from: private */
+    public double calculateResult(int rightValuePosition) {
+        double totalValue = this.f2a - this.f3b;
         int startRange = 1;
         int endRange = 10;
-        for(int i=0;i<10;i++)
-        {
-            if(i!=0)
-            {
-                startRange = startRange+10;
-                endRange = endRange+10;
+        for (int i = 0; i < 10; i++) {
+            if (i != 0) {
+                startRange += 10;
+                endRange += 10;
             }
-            double value = Double.parseDouble(tdes[i].getText().toString());
-            if(value!=0)
-            {
-
-                //check if it is correct or incorrect box
-                //here need to add to string
-                if(i==rightValuePosition)
-                {
-                    //for correct bin
-                    double temp = value/10;
-                    temp = b*temp*(2-temp);
-
-                    totalValue = totalValue+temp;
+            double value2 = Double.parseDouble(tdes[i].getText().toString());
+            if (value2 != 0.0d) {
+                if (i == rightValuePosition) {
+                    double temp = value2 / 10.0d;
+                    totalValue += this.f3b * temp * (2.0d - temp);
+                } else {
+                    double temp2 = value2 / 10.0d;
+                    totalValue -= (this.f3b * temp2) * temp2;
                 }
-                else{
-                    //for incorrect bin
-                    double temp = value/10.0;
-                    temp=b*temp*temp;
-                    totalValue = totalValue-temp;
-
-                }
-
             }
         }
         System.out.println(totalValue);
         return totalValue;
     }
 
-    public static List<String>resp=new ArrayList<>();
-
-    int totVal=0;
-    public void setResultVisible()
-    {
+    public void setResultVisible() {
         int totalValue = 0;
-        for(int i=0;i<10;i++)
-        {
-            textView = (TextView) tdes[i];
-            totalValue = totalValue + Integer.parseInt(textView.getText().toString());
-
+        for (int i = 0; i < 10; i++) {
+            TextView textView2 = tdes[i];
+            this.textView = textView2;
+            totalValue += Integer.parseInt(textView2.getText().toString());
         }
-        if(totalValue == 10&&totVal!=10)
-        {
-            totVal=10;
-            TableLayout tableLayout = findViewById(R.id.table_layout);
-            tableLayout.setVisibility(View.VISIBLE);
-
-            if(resp.size()==0||(!resp.get(resp.size()-1).equals(getRes())))
-                resp.add(getRes());
+        if (totalValue != 10 || this.totVal == 10) {
+            this.totVal = 0;
+            ((TableLayout) findViewById(R.id.table_layout)).setVisibility(View.INVISIBLE);
+            return;
         }
-        else{
-            totVal=0;
-            TableLayout tableLayout = findViewById(R.id.table_layout);
-            tableLayout.setVisibility(View.INVISIBLE);
-        }
+        this.totVal = 10;
+        ((TableLayout) findViewById(R.id.table_layout)).setVisibility(View.VISIBLE);
+        resp = getRes();
     }
 }
