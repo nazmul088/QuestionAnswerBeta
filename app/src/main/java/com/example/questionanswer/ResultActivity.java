@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -301,6 +304,7 @@ public class ResultActivity extends AppCompatActivity {
                 main.put("game6Score", ThirdMainQuestionActivity.resultString);
                 int size2 = size + 1;
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+
                 databaseReference.child("game/" + size2).setValue(main).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
