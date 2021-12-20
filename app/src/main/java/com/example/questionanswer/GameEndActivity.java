@@ -51,6 +51,12 @@ public class GameEndActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MaintwoActivity.ended = false;
+                PracticeSecondActivity.ended = false;
+                PracticeThirdActivity.ended = false;
+                FirstMainQuestionActivity.ended = false;
+                SecondMainQuestionActivity.ended = false;
+                ThirdMainQuestionActivity.ended = false;
                 startActivity(new Intent(getApplicationContext(),NameActivity.class));
             }
         });
@@ -58,12 +64,6 @@ public class GameEndActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        MaintwoActivity.ended = false;
-        PracticeSecondActivity.ended = false;
-        PracticeThirdActivity.ended = false;
-        FirstMainQuestionActivity.ended = false;
-        SecondMainQuestionActivity.ended = false;
-        ThirdMainQuestionActivity.ended = false;
         Toast.makeText(GameEndActivity.this,"Cannot Go back on this stage",Toast.LENGTH_LONG).show();
     }
 }
