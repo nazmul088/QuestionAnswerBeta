@@ -21,7 +21,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -241,29 +245,7 @@ public class ResultActivity extends AppCompatActivity {
         });
     }
 
-    class GameItem {
-        public String enumerator_name;
-        public String game1;
-        public String game1Score;
-        public String game2;
-        public String game2Score;
-        public String game3;
-        public String game3Score;
 
-        /* renamed from: id */
-        public String id;
-        public String respondent_name;
-
-        GameItem() {
-        }
-    }
-
-    class GameItemList {
-        public ArrayList<GameItem> gameItemArrayList = new ArrayList<>();
-
-        GameItemList() {
-        }
-    }
 
     /* access modifiers changed from: private */
     public void uploadToServer() {
@@ -278,6 +260,26 @@ public class ResultActivity extends AppCompatActivity {
                 main.put("Date",ThirdMainQuestionActivity.Game_Play_Date);
                 main.put("Start Time",MaintwoActivity.startTime);
                 main.put("End Time",ThirdMainQuestionActivity.endTime);
+                SimpleDateFormat simpleDateFormat
+                        = new SimpleDateFormat("HH:mm:ss");
+
+                // Parsing the Time Period
+                try {
+                    Date time1 = simpleDateFormat.parse(MaintwoActivity.startTime);
+                    Date time2 = simpleDateFormat.parse(ThirdMainQuestionActivity.endTime);
+
+                    long differenceInMilliSeconds
+                            = Math.abs(time2.getTime() - time1.getTime());
+                    long differenceInSeconds
+                            = (differenceInMilliSeconds / 1000) % 60;
+
+                    long differenceInMinutes
+                            = (differenceInMilliSeconds / (60 * 1000)) % 60;
+                    main.put("Duration",differenceInMinutes+ " m " + differenceInSeconds+ " s ");
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
                 main.put("id", NameActivity.id);
                 main.put("enumerator_name", NameActivity.enumerator_name);
                 main.put("respondent_name", NameActivity.respondent_name);
