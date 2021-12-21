@@ -17,9 +17,13 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class ThirdMainQuestionActivity extends CustomActivity {
     public static Activity activity;
@@ -41,6 +45,8 @@ public class ThirdMainQuestionActivity extends CustomActivity {
     /* access modifiers changed from: private */
     public TextView textView;
     int totVal = 0;
+
+    public static String endTime, Game_Play_Date;
 
     public void onBackPressed() {
 
@@ -241,6 +247,8 @@ public class ThirdMainQuestionActivity extends CustomActivity {
                     Intent intent = new Intent(ThirdMainQuestionActivity.this.getApplicationContext(), ResultActivity.class);
                     intent.putExtra("game", "thirdMainQuestion");
                     ThirdMainQuestionActivity.resultString = String.valueOf(result);
+                    endTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+                    Game_Play_Date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                     intent.putExtra("earn", String.valueOf(result));
                     intent.putExtra("lost", String.valueOf(lostValue));
                     intent.putExtra("language", ThirdMainQuestionActivity.this.language);

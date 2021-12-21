@@ -275,6 +275,9 @@ public class ResultActivity extends AppCompatActivity {
                 } catch (Exception e) {
                 }
                 HashMap<String, String> main = new HashMap<>();
+                main.put("Date",ThirdMainQuestionActivity.Game_Play_Date);
+                main.put("Start Time",MaintwoActivity.startTime);
+                main.put("End Time",ThirdMainQuestionActivity.endTime);
                 main.put("id", NameActivity.id);
                 main.put("enumerator_name", NameActivity.enumerator_name);
                 main.put("respondent_name", NameActivity.respondent_name);
@@ -299,6 +302,7 @@ public class ResultActivity extends AppCompatActivity {
                 main.put("game4Score", FirstMainQuestionActivity.resultString);
                 main.put("game5Score", SecondMainQuestionActivity.resultString);
                 main.put("game6Score", ThirdMainQuestionActivity.resultString);
+
                 int size2 = size + 1;
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
                 databaseReference.child("game/" + size2).setValue(main).addOnCompleteListener(new OnCompleteListener<Void>() {
