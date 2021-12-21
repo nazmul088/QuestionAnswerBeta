@@ -17,9 +17,13 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class MaintwoActivity extends CustomActivity {
     public static Activity activity;
@@ -43,6 +47,7 @@ public class MaintwoActivity extends CustomActivity {
     /* access modifiers changed from: private */
     public TextView textView;
     int totVal = 0;
+    public static String startTime = "";
 
     /* access modifiers changed from: protected */
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,8 @@ public class MaintwoActivity extends CustomActivity {
         il = new ItemList[11];
         activity = this;
         setContentView((int) R.layout.main3);
+        startTime =  new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+
         String stringExtra = getIntent().getStringExtra("language");
         this.language = stringExtra;
         if (stringExtra.equalsIgnoreCase("Bangla")) {
